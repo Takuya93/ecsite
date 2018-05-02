@@ -6,11 +6,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="Content-Style-Type" content="text/css"/>
-<meta http-equiv="Content-Script-Type" content="text/script"/>
+<meta http-equiv="Content-Script-Type" content="text/Script"/>
 <meta http-equiv="imagetoolbar" content="no"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
-<title>Login画面</title>
+<title>BuyItemComplete画面</title>
 <style type="text/css">
 body{
 	margin:0;
@@ -47,37 +47,28 @@ table{
 	background-color:black;
 	clear:both;
 }
-#text-link{
-	display:inline-block;
-	text-align:right;
-}
+
+
 </style>
+
+
 </head>
 <body>
 
-
-</body>
 <div id="header">
 	<div id="pr">
 	</div>
 </div>
 <div id="main">
 	<div id="top">
-		<p>Login</p>
+		<p>BuyItemComplete</p>
 	</div>
 	<div>
-		<h3>商品を購入する際にはログインをお願いします。</h3>
-		<s:form action="LoginAction">
-			<s:textfield name="loginUserId"/>
-			<s:password name="loginPassword"/>
-			<s:submit value="ログイン"/>
-		</s:form>
-		<br/>
-		<div id="text-link">
-			<p>新規ユーザー登録は
-				<a href='<s:url action="UserCreateAction"/>'>こちら</a></p>
-			<p>Homeへ戻る場合は
-				<a href='<s:url action="GoHomeAction"/>'>こちら</a>
+		<p>購入手続きが完了いたしました。</p>
+		<div>
+		<a href='<s:url action="MyPageAction"/>'>マイページ</a><span>から購入履歴の確認が可能です。</span>
+			<p>Homeへ戻る場合は<a href='<s:url action="GoHomeAction"/>'>こちら</a></p>
+
 		</div>
 	</div>
 </div>
@@ -86,4 +77,5 @@ table{
 	<div id="pr">
 	</div>
 </div>
+</body>
 </html>

@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="Content-Style-Type" content="text/css"/>
-<meta http-equiv="Content=Script-Type" content="text/script"/>
+<meta http-equiv="Content-Script-Type" content="text/javascript"/>
 <meta http-equiv="imagetoolbar" content="no"/>
 <meta name="keywords" content=""/>
 <meta name="description" content=""/>
@@ -18,7 +18,7 @@ body{
 	padding:0;
 	line-height:1.6;
 	letter-spacing:1px;
-	font-famly:Verdana,Helvetica,sans-selif;
+	font-family:Verdana,Helvetica,sans-serif;
 	font-size:12px;
 	color:#333;
 	background:#fff;
@@ -57,7 +57,7 @@ table{
 </div>
 <div id="main">
 	<div id="top">
-		<p>BuyItem<p>
+		<p>BuyItem</p>
 	</div>
 	<div>
 		<s:form action = "BuyItemAction">
@@ -108,8 +108,8 @@ table{
 		</table>
 		</s:form>
 			<div>
-				<p>前画面に戻る場合は<a href='<s:url action="GoHomeAction"/>'>こちら</a>
-				<p>マイページは<a href='<s:url action="MyPageAction"/>'>こちら</a>
+				<p>前画面に戻る場合は<a href='<s:url action="GoHomeAction"/>'>こちら</a></p>
+				<p>マイページは<a href='<s:url action="MyPageAction"/>'>こちら</a></p>
 
 			</div>
 	</div>

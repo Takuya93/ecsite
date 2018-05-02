@@ -10,14 +10,16 @@
 <meta http-equiv="imagetoolbar" content="no"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
-<title>Login画面</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<title>BuyItemConfirm画面</title>
+
 <style type="text/css">
 body{
 	margin:0;
 	padding:0;
 	line-height:1.6;
-	letter-spacing:1px;
-	font-famly:Verdana,Helvetica,sans-selif;
+	letter-spaceing:1px;
+	font-family:Verdana,Helvetica,sans-serif;
 	font-size:12px;
 	color:#333;
 	background:#fff;
@@ -47,43 +49,60 @@ table{
 	background-color:black;
 	clear:both;
 }
-#text-link{
-	display:inline-block;
-	text-align:right;
-}
 </style>
+<script type="text/javascript">
+function submitAction(url){
+	$('form').attr('action',url);
+	$('form').submit();
+}
+</script>
 </head>
+
 <body>
-
-
-</body>
 <div id="header">
 	<div id="pr">
 	</div>
 </div>
 <div id="main">
 	<div id="top">
-		<p>Login</p>
+		<p>BuyItem</p>
 	</div>
 	<div>
-		<h3>商品を購入する際にはログインをお願いします。</h3>
-		<s:form action="LoginAction">
-			<s:textfield name="loginUserId"/>
-			<s:password name="loginPassword"/>
-			<s:submit value="ログイン"/>
+		<s:form>
+	<tr>
+		<td>商品名</td>
+		<td><s:property value="session.buyItem_name"/></td>
+	</tr>
+	<tr>
+		<td>値段</td>
+		<td><s:property value="session.total_price"/><span>円</span></td>
+	</tr>
+	<tr>
+		<td>購入個数</td>
+		<td><s:property value="session.count"/><span>個</span></td>
+	</tr>
+	<tr>
+		<td>支払い方法</td>
+		<td><s:property value="session.pay"/></td>
+	</tr>
+	<tr>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td><input type="button" value="戻る" onclick="submitAction('HomeAction')"/></td>
+		<td><input type="button" value="完了" onclick="submitAction('BuyItemConfirmAction')"/></td>
+	</tr>
 		</s:form>
-		<br/>
-		<div id="text-link">
-			<p>新規ユーザー登録は
-				<a href='<s:url action="UserCreateAction"/>'>こちら</a></p>
-			<p>Homeへ戻る場合は
-				<a href='<s:url action="GoHomeAction"/>'>こちら</a>
-		</div>
+
+	<div>
+		<p>前画面に戻る場合は<a href='<s:url action="GoHomeAction"/>'>こちら</a>
+		<p>マイページは<a href='<s:url action="MyPageAction"/>'>こちら</a>
+	</div>
 	</div>
 </div>
-
 <div id="footer">
 	<div id="pr">
 	</div>
 </div>
+</body>
 </html>

@@ -16,11 +16,11 @@ public class BuyItemAction extends ActionSupport implements SessionAware{
 		session.put("count", count);
 		int intCount = Integer.parseInt(session.get("count").toString());
 		int intPrice = Integer.parseInt(session.get("buyItem_price").toString());
-		session.put("total_price",intCount*intPrice);
+		session.put("total_price", intCount * intPrice);
 		String payment;
 		if(pay.equals("1")){
 			payment = "現金払い";
-			session.put("pay",payment);
+			session.put("pay", payment);
 		}else{
 			payment = "クレジットカード";
 			session.put("pay", payment);
@@ -37,8 +37,8 @@ public class BuyItemAction extends ActionSupport implements SessionAware{
 	}
 
 	@Override
-	public void setSession(Map<String,Object> session){
+	public void setSession(Map<String, Object> session){
 		this.session = session;
-	}
+	} 
 
 }

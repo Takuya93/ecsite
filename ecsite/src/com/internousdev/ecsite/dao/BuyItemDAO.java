@@ -1,11 +1,9 @@
 package com.internousdev.ecsite.dao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-
 import com.internousdev.ecsite.dto.BuyItemDTO;
 import com.internousdev.ecsite.util.DBConnector;
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.PreparedStatement;
 
 public class BuyItemDAO {
 	private DBConnector dbConnector = new DBConnector();
@@ -24,6 +22,7 @@ public class BuyItemDAO {
 				buyItemDTO.setItemName(resultSet.getString("item_name"));
 				buyItemDTO.setItemPrice(resultSet.getString("item_price"));
 			}
+
 		}catch(Exception e){
 			e.printStackTrace();
 		}

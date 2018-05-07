@@ -1,0 +1,515 @@
+
+
+<!-- 戌亥 -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<link rel="stylesheet" href="./css/fifties.css">
+<link rel="stylesheet" href="./css/productDetails.css">
+<title>商品詳細</title>
+</head>
+<body>
+
+	
+
+
+<style>
+header {
+	width: 100%;
+	height: 90px;
+	color: white;
+	font-size: 35px;
+	font-family: Impact, arial black, Helvetica, sans-serif;
+	background: #33170a;
+	position: fixed;
+	z-index: 5;
+	min-width:1500px;
+}
+
+#headercontents {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.logo {
+	margin: 3px 15px;
+	float: left;
+	height: 90px;
+}
+
+.logo img {
+	height: 84px;
+	width: 160px;
+}
+
+.guest {
+	font-size: 15px;
+	line-height: 30px;
+	margin: 0 0 0 10px;
+	text-align: left;
+}
+
+.user{
+	color: #dd99ff;
+	font-size: 18px;
+}
+
+#header ul {
+	display: flex;
+	line-height: 60px;
+	margin: 0;
+	padding: 0;
+}
+
+#header ul li {
+	float: left;
+	margin-left: auto;
+	padding: 0;
+	list-style-type: none;
+}
+
+header.searth {
+	float: left;
+	margin-right: 10px;
+}
+
+header select {
+	background-color: black;
+	color: white;
+	border: 1px solid white;
+	font-size: 18px;
+	border-radius: 5px;
+}
+
+.headerform {
+	background-color: white;
+	color: black;
+	border: 1px solid white;
+	font-size: 18px;
+	border-radius: 5px;
+}
+
+.headersubmit {
+	background-color: #00ced1;
+	border: none;
+	border: 1px solid white;
+	color: white;
+	border-radius: 5px;
+	font-size: 18px;
+}
+
+#header a {
+	text-decoration: none;
+	color: #00ced1;
+
+}
+
+#header a:visited {
+	color: #00ced1;
+}
+
+#header a:hover {
+	text-decoration: underline;
+}
+
+#header ul li .inquirylogout{
+	clear: both;
+	font-weight: none;
+	line-height: 25px;
+	font-size: 15px;
+}
+
+#header ul li .inquirylogout a {
+	text-decoration: none;
+	color: white;
+}
+
+#header ul li .inquirylogout a:hover {
+	text-decoration: underline;
+}
+
+</style>
+
+<header>
+
+	<div id="headercontents">
+
+		<div class="logo">
+			<a href='/fifties/GoHomeAction.action'><img
+				src="./images/logo.png" /></a>
+		</div>
+
+		<p class="guest">
+			
+			
+					ようこそ！<span class="user">ゲスト</span>さん
+			
+		</p>
+
+		<div id="header">
+			<ul>
+				<li><a href='/fifties/GoHomeAction.action'>HOME</a></li>
+				<li><a href='/fifties/ProductSearchAction.action'>PRODUCT</a></li>
+				<li><a href='/fifties/CartAction.action'>CART</a></li>
+				
+
+				<li class="searchlist"><form id="ProductSearchAction" name="ProductSearchAction" action="/fifties/ProductSearchAction.action" method="post">
+						<div>
+
+<!-- 検索されたカテゴリを保持 -->
+							
+								<select class="search" name="category">
+									<option value=0>AllCategory</option>
+									<option value=1>車</option>
+									<option value=2>音楽・映画</option>
+									<option value=3>家電</option>
+								</select>
+							
+
+<!-- 車で検索 -->
+							
+
+<!-- 音楽 映画で検索 -->
+							
+
+							<!-- 家電で検索 -->
+							
+
+							<input type="text" class="search headerform" name="searchWord"
+								value="" />
+							<input type="submit" value="検索" id="ProductSearchAction_0" class="headersubmit search"/>
+
+						</div>
+					</form>
+
+
+</li>
+
+
+				<li>
+					<div class="inquirylogout">
+						<a href='/fifties/InquiryAction.action'>お問合わせ</a><br>
+						
+						
+							<a href='/fifties/GoLoginAction.action'>ログイン</a>
+						
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</header>
+
+	<div class="main">
+		<div class="title">
+			<div class="titlefont">
+				<h1>PRODUCT</h1>
+				<p class="title">商品詳細</p>
+			</div>
+		</div>
+
+	<div id="main_con">
+		<div class="container1">
+
+			<form id="CartInsertAction" name="CartInsertAction" action="/fifties/CartInsertAction.action" method="post">
+
+				<img class="img1" src="./images/kaden/greenLamp.jpg">
+
+				<div class="con1">
+					<p class="pname">
+						<b>グリーンランプ</b>
+					</p>
+
+					<p class="kana">
+						ぐりーんらんぷ
+					</p>
+
+					<p class="info">
+						1950-01-01<br>
+						OldCompany
+					</p>
+
+					<p class="price">
+						3000
+						円
+					</p>
+
+					<p class="info">
+						在庫：26個
+					</p>
+
+				
+					
+					<div id="selectWrap">
+						<select class="select" name="productCount">
+							
+								<option value="1">1</option>
+							
+								<option value="2">2</option>
+							
+								<option value="3">3</option>
+							
+								<option value="4">4</option>
+							
+								<option value="5">5</option>
+							
+						</select>
+						</div>
+						<input type="hidden" name="productId" value="1" id="CartInsertAction_productId"/>
+						<input type="hidden" name="price" value="3000" id="CartInsertAction_price"/>
+						<input type="submit" value=" カートに入れる" id="CartInsertAction_0" class="button-layout long"/>
+
+					
+
+					
+					
+				</div>
+
+			<!-- トークン -->
+			<input type="hidden" name="struts.token.name" value="token" />
+<input type="hidden" name="token" value="F6Z3BSPGDRFIPD0TJJ5H45GEBTRZHSER" />
+
+			</form>
+
+
+
+
+			
+
+			<div class="con2">
+				<p>
+					レアなヴィンテージ。アメリカから来た緑色のランプです。
+
+				</p>
+			</div>
+
+			
+			
+
+			
+				<div class="con3">
+					
+						<div class="reviewbox">
+
+							<span class="rtitle">かっこいい
+							</span>
+							<br>
+
+							
+							
+
+							
+
+							
+
+							
+								<span class="star">★★★★★</span>
+							
+
+
+
+							<p class="rbody">
+								とてもかっこいいランプだと思います
+							</p>
+						</div>
+					
+						<div class="reviewbox">
+
+							<span class="rtitle">明るい
+							</span>
+							<br>
+
+							
+							
+
+							
+
+							
+								<span class="star">★★★★</span>
+							
+
+							
+
+
+
+							<p class="rbody">
+								明るくて作業しやすいです
+							</p>
+						</div>
+					
+						<div class="reviewbox">
+
+							<span class="rtitle">緑がすてき
+							</span>
+							<br>
+
+							
+							
+
+							
+
+							
+
+							
+								<span class="star">★★★★★</span>
+							
+
+
+
+							<p class="rbody">
+								色がとてもいい緑です！
+							</p>
+						</div>
+					
+						<a
+							href='
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				/fifties/ReviewListAction.action?productId=1&amp;imageFilePath=.%2Fimages%2Fkaden%2FgreenLamp.jpg&amp;productName=%E3%82%B0%E3%83%AA%E3%83%BC%E3%83%B3%E3%83%A9%E3%83%B3%E3%83%97&amp;productNameKana=%E3%81%90%E3%82%8A%E3%83%BC%E3%82%93%E3%82%89%E3%82%93%E3%81%B7&amp;productDescription=%E3%83%AC%E3%82%A2%E3%81%AA%E3%83%B4%E3%82%A3%E3%83%B3%E3%83%86%E3%83%BC%E3%82%B8%E3%80%82%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%AB%E3%81%8B%E3%82%89%E6%9D%A5%E3%81%9F%E7%B7%91%E8%89%B2%E3%81%AE%E3%83%A9%E3%83%B3%E3%83%97%E3%81%A7%E3%81%99%E3%80%82&amp;productStock=26&amp;price=3000&amp;categoryId=3&amp;releaseCompany=OldCompany&amp;releaseDate=1950-01-01'>
+				<span class="review">▼レビュー一覧▼</span></a>
+				</div>
+			
+		</div>
+		</div>
+		<h3>おすすめ商品</h3>
+
+		
+		
+			<div class="productbox">
+				<a
+					href="
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				/fifties/ProductDetailsAction.action?product_id=3&amp;image_file_path=.%2Fimages%2Fkaden%2FToster.jpg&amp;product_name=%E3%83%88%E3%83%BC%E3%82%B9%E3%82%BF%E3%83%BC&amp;product_name_kana=%E3%81%A8%E3%83%BC%E3%81%99%E3%81%9F%E3%83%BC&amp;product_description=%E3%81%8A%E3%81%A1%E3%82%83%E3%82%81%E3%81%AA%E7%84%BC%E3%81%8D%E8%89%B2%E3%81%AE%E3%81%A4%E3%81%8F%E6%A5%BD%E3%81%97%E3%81%84%E3%83%88%E3%83%BC%E3%82%B9%E3%82%BF%E3%83%BC%EF%BC%81%E6%98%8E%E3%82%8B%E3%81%84%E6%9C%9D%E3%81%AE%E9%A3%9F%E5%8D%93%E3%81%AB%EF%BC%81&amp;product_stock=29&amp;price=6000&amp;category_id=3&amp;release_company=OldCompany&amp;release_date=1950-01-01">
+					<img src="./images/kaden/Toster.jpg">
+					<span class="link2">
+						トースター
+					</span>
+						<br>
+					<span class="link2">
+						とーすたー
+					</span>
+						<br>
+					<span class="link2">
+						6000円
+					</span>
+						 <br>
+					<span class="link2">
+						在庫：
+						29
+						個
+					</span>
+				</a>
+			</div>
+		
+			<div class="productbox">
+				<a
+					href="
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				/fifties/ProductDetailsAction.action?product_id=0&amp;image_file_path=.%2Fimages%2Ftelephone.jpg&amp;product_name=%E3%83%AC%E3%83%88%E3%83%AD%E3%83%95%E3%82%A9%E3%83%B3&amp;product_name_kana=%E3%82%8C%E3%81%A8%E3%82%8D%E3%81%B5%E3%81%89%E3%82%93&amp;product_description=%E3%83%87%E3%83%83%E3%83%89%E3%82%B9%E3%83%88%E3%83%83%E3%82%AF%EF%BC%81%E3%83%AC%E3%83%88%E3%83%AD%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E9%9B%BB%E8%A9%B1%E6%A9%9F%E3%80%82%E4%BA%BA%E6%B0%97%E3%81%AE%E5%95%86%E5%93%81%E3%81%A7%E3%81%99&amp;product_stock=50&amp;price=5000&amp;category_id=3&amp;release_company=OldCompany&amp;release_date=1950-01-01">
+					<img src="./images/telephone.jpg">
+					<span class="link2">
+						レトロフォン
+					</span>
+						<br>
+					<span class="link2">
+						れとろふぉん
+					</span>
+						<br>
+					<span class="link2">
+						5000円
+					</span>
+						 <br>
+					<span class="link2">
+						在庫：
+						50
+						個
+					</span>
+				</a>
+			</div>
+		
+			<div class="productbox">
+				<a
+					href="
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				/fifties/ProductDetailsAction.action?product_id=6&amp;image_file_path=.%2Fimages%2Fkaden%2Fstobe.jpg&amp;product_name=%E3%82%B9%E3%83%88%E3%83%BC%E3%83%96&amp;product_name_kana=%E3%81%99%E3%81%A8%E3%83%BC%E3%81%B6&amp;product_description=%E4%BA%BA%E6%B0%97%E5%95%86%E5%93%81%EF%BC%81%E3%81%8A%E3%81%97%E3%82%83%E3%82%8C%E3%81%AA%E3%82%B9%E3%83%88%E3%83%BC%E3%83%96%E3%81%A7%E3%81%99%E3%80%82%E3%81%8A%E6%97%A9%E3%82%81%E3%81%AB%EF%BC%81&amp;product_stock=30&amp;price=80000&amp;category_id=3&amp;release_company=OldCompany&amp;release_date=1950-01-01">
+					<img src="./images/kaden/stobe.jpg">
+					<span class="link2">
+						ストーブ
+					</span>
+						<br>
+					<span class="link2">
+						すとーぶ
+					</span>
+						<br>
+					<span class="link2">
+						80000円
+					</span>
+						 <br>
+					<span class="link2">
+						在庫：
+						30
+						個
+					</span>
+				</a>
+			</div>
+		
+	</div>
+	
+
+
+<style>
+
+footer{
+	width: 100%;
+	height: 50px;
+
+	color: white;
+	text-align:center;
+	line-height:50px;
+	clear:both;
+	z-index:5;
+	background:#33170a;
+	}
+
+</style>
+
+<footer>&copy;THE   FIFTIES</footer>
+</body>
+</html>

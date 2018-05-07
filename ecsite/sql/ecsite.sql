@@ -40,6 +40,19 @@ create table login_user_transaction(
 	delete_date datetime
 	);
 
+	drop table if exists cart;
+
+	create table cart(
+	id int primary key auto_increment not null,
+	user_id varchar(16),
+	item_id int,
+	total_price int,
+	buy_count int,
+	pay varchar(16),
+	insert_date datetime,
+	update_date datetime
+	);
+
 	INSERT INTO item_info_transaction(item_name,item_price,item_stock) VALUES("ノートBook",100,50);
 	INSERT INTO item_info_transaction(item_name,item_price,item_stock) VALUES("pen",300,50);
 	INSERT INTO item_info_transaction(item_name,item_price,item_stock) VALUES("歯ブラシ",250,20);

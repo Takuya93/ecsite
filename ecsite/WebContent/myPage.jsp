@@ -12,47 +12,7 @@
 <meta name="keywords" content=""/>)
 <title>MyPage画面</title>
 
-<style type="text/css">
-body{
-	margin:0;
-	padding:0;
-	line-height:1.6;
-	letter-spacing:1px;
-	font-famly:Verdana,Helvetica,sans-selif;
-	font-size:12px;
-	color:#333;
-	background:#fff;
-}
-table{
-	text-align:center;
-	margin:0 auto;
-}
-#top{
-	width:780px;
-	margin:30px auto;
-	border:1px solid #333;
-}
-#header{
-	width:100%;
-	height:80px;
-	background-color:black;
-}
-#main{
-	width:100%;
-	height:500px;
-	text-align:center;
-}
-#footer{
-	width:100%;
-	height:80px;
-	background-color:black;
-	clear:both;
-}
-#text-right{
-	display:inline-block;
-	text-align:right;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="./style/Home.css">
 
 </head>
 <body>
@@ -82,10 +42,10 @@ table{
 			<s:iterator value="myPageList">
 				<tr>
 					<td><s:property value="itemName"/></td>
-					<td><s:property value="totalPrice"/><span>円</</span></td>
+					<td><s:property value="totalPrice"/><span>円</span></td>
 					<td><s:property value="totalCount"/><span>個</span></td>
 					<td><s:property value="payment"/></td>
-					<td><s:property value="insert_date"/></td>				
+					<td><s:property value="insert_date"/></td>
 				</tr>
 			</s:iterator>
 			</table>

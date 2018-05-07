@@ -6,8 +6,9 @@
 <struts>
 	<constant name="struts.devMode" value="true"/>
 	<package name="com.internousdev.ecsite.action" extends="struts-default">
-	
-		
+
+
+
 		<!-- GoHomeAction -->
 		<action name="GoHomeAction" class="com.internousdev.ecsite.action.GoHomeAction" method="execute">
 		<result name="success">home.jsp</result>
@@ -19,10 +20,12 @@
 		<result name="success">buyItem.jsp</result>
 		</action>
 
+
+
 		<!-- LoginAction -->
 		<action name="LoginAction" class="com.internousdev.ecsite.action.LoginAction" method="execute">
 		<result name="success">buyItem.jsp</result>
-		<result name="error">home.jsp</result>
+		<result name="error">loginError.jsp</result>
 		</action>
 
 		<!-- LogoutAction -->

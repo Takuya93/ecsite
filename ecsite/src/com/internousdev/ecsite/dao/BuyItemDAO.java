@@ -18,9 +18,13 @@ public class BuyItemDAO {
 			ResultSet resultSet = preparedStatement.executeQuery();
 
 			if(resultSet.next()){
-				buyItemDTO.setId(resultSet.getInt("id"));
-				buyItemDTO.setItemName(resultSet.getString("item_name"));
-				buyItemDTO.setItemPrice(resultSet.getString("item_price"));
+				while(rs.next()){
+				buyItemDTO.setId(resultSet.getInt("id_i"));
+				buyItemDTO.setItemName(resultSet.getString("item_name_i"));
+				buyItemDTO.setItemPrice(resultSet.getString("item_price_i"));
+
+
+			}
 			}
 
 		}catch(Exception e){

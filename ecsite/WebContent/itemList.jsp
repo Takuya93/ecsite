@@ -36,7 +36,7 @@
 			<li><img src="./image/pen.jpg" width="170px" height="170px"></li>
 			<li>商品名:pen</li>
 			<li>価格:300円</li>
-			<li><a href='<s:url action="PenAction"/>'>商品詳細</a></li>
+			<li><a href='<s:url action="HomeAction"/>'>商品詳細</a></li>
 		</ul>
 	</div>
 		<div id="products">

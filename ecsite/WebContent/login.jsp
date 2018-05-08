@@ -16,8 +16,6 @@
 </head>
 <body>
 
-
-</body>
 <div id="header">
 	<div id="pr">
 	</div>
@@ -28,6 +26,7 @@
 	</div>
 	<div>
 		<h3>商品を購入する際にはログインをお願いします。</h3>
+		<s:actionerror />
 		<s:form action="LoginAction">
 			<s:textfield name="loginUserId"/>
 			<s:password name="loginPassword"/>
@@ -47,4 +46,7 @@
 	<div id="pr">
 	</div>
 </div>
+
+</body>
+
 </html>

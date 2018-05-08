@@ -17,10 +17,26 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	private LoginDAO loginDAO = new LoginDAO();
 	private LoginDTO loginDTO = new LoginDTO();
 	private BuyItemDAO buyItemDAO = new BuyItemDAO();
+
+	public void validate(){
+		if(loginUserId == null || loginUserId.length() == 0){
+			addActionError("IDを入力してください。");
+		}
+		if(loginPassword == null || loginPassword.length() == 0){
+			addActionError("パスワードを入力してください。");
+		}
+
+
+	}
+
+
+
 	public String execute(){
+
 		String result = ERROR;
 		loginDTO = loginDAO.getLoginUserInfo(loginUserId,loginPassword);
 		session.put("loginUser", loginDTO);
+
 
 
 
@@ -53,6 +69,4 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	public void setSession(Map<String, Object> session){
 		this.session = session;
 	}
-
-
 }

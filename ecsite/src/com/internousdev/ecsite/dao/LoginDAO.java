@@ -1,11 +1,9 @@
 package com.internousdev.ecsite.dao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-
 import com.internousdev.ecsite.dto.LoginDTO;
 import com.internousdev.ecsite.util.DBConnector;
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.PreparedStatement;
 
 public class LoginDAO {
 	private DBConnector dbConnector = new DBConnector();
@@ -28,9 +26,10 @@ public class LoginDAO {
 				loginDTO.setLoginPassword(resultSet.getString("login_pass"));
 				loginDTO.setUserName(resultSet.getString("user_name"));
 
-				if(!(resultSet.getString("login_id").equals(null))){
+				if((resultSet.getString("login_id").isEmpty())){
 					loginDTO.setLoginFlg(true);
 				}
+
 			}
 		}catch(Exception e){
 			e.printStackTrace();

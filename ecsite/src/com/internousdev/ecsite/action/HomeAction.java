@@ -1,3 +1,4 @@
+
 package com.internousdev.ecsite.action;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -6,8 +7,10 @@ import com.internousdev.ecsite.dao.BuyItemDAO;
 import com.internousdev.ecsite.dto.BuyItemDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
+
 public class HomeAction extends ActionSupport implements SessionAware{
 	public Map<String,Object> session;
+
 
 	public String execute(){
 		String result = "login";
@@ -15,6 +18,7 @@ public class HomeAction extends ActionSupport implements SessionAware{
 		if(session.containsKey("id")){
 			BuyItemDAO buyItemDAO = new BuyItemDAO();
 			BuyItemDTO buyItemDTO = buyItemDAO.getBuyItemInfo();
+			list.add(buyItemDTO);
 			session.put("id", buyItemDTO.getId());
 			session.put("buyItem_name",buyItemDTO.getItemName());
 			session.put("buyItem_price", buyItemDTO.getItemPrice());

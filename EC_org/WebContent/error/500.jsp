@@ -10,8 +10,8 @@
 <meta http-equiv="imagetoolbar" content="no"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
-<title>Login</title>
-<link rel="stylesheet" type="text/css" href="./style/home.css">
+<title>500ERROR</title>
+<link rel="stylesheet" type="text/css" href=".style/home.css">
 </head>
 <body>
 <div id="header">
@@ -21,27 +21,18 @@
 </div>
 
 <div id="main">
-	<div id="top">
-		<p>Login</p>
-	</div>
-	<div>
-		<h3>ログインをお願いします。</h3>
-		<s:form action="LoginAction">
-			<s:textfield name="loginUserId" placeholder="IDを入力"/>
-			<s:password name="loginPassword" placeholder="パスワードを入力"/>
-			<s:submit value="ログイン"/>
-		</s:form>
-		<br>
-		<div id="text-link">
-			<p>新規ユーザー登録は<a class="link" href='<s:url action="UserCreateAction"/>'>こちら</a></p>
-			<p>Homeへ戻る場合は<a class="link" href='<s:url action="GoHomeAction"/>'>こちら</a></p>
-		</div>
+	<div id="text_center">
+		<h2>エラーが発生しました！</h2>
+		<p>ホーム画面は<a href="home.jsp">こちら</a></p>
+
 	</div>
 </div>
+
 <div id="footer">
 	<div id="pr">
 		<s:include value="footer.jsp"/>
 	</div>
 </div>
+
 </body>
 </html>

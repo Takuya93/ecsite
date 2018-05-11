@@ -6,11 +6,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="Content-Style-Type" content="text/css"/>
-<meta http-equiv="Content-Script-Type" content="text/javascript"/>
+<meta http-equiv="Content=Script-Type" content="text/javascript"/>
 <meta http-equiv="imagetoolbar" content="no"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
-<title>Login</title>
+<title>ItemList</title>
 <link rel="stylesheet" type="text/css" href="./style/home.css">
 </head>
 <body>
@@ -22,26 +22,29 @@
 
 <div id="main">
 	<div id="top">
-		<p>Login</p>
+		<p>ItemList</p>
 	</div>
+
 	<div>
-		<h3>ログインをお願いします。</h3>
-		<s:form action="LoginAction">
-			<s:textfield name="loginUserId" placeholder="IDを入力"/>
-			<s:password name="loginPassword" placeholder="パスワードを入力"/>
-			<s:submit value="ログイン"/>
-		</s:form>
-		<br>
-		<div id="text-link">
-			<p>新規ユーザー登録は<a class="link" href='<s:url action="UserCreateAction"/>'>こちら</a></p>
-			<p>Homeへ戻る場合は<a class="link" href='<s:url action="GoHomeAction"/>'>こちら</a></p>
-		</div>
+		<s:iterator value="session.buyItemList">
+			<div>
+				<a class="link" href='<s:url action="BuyItemMoreInfomationAction"><s:param name="id" value="id"/></s:url>'>
+					<s:property value="itemName"/>
+				</a>
+			</div>
+		</s:iterator>
 	</div>
+
+	<p>前画面に戻る場合は<a class="link" href='<s:url action="GoHomeAction"/>'>こちら</a></p>
+	<p>マイページは<a class="link" href='<s:url action="MyPageAction"/>'>こちら</a></p>
+
+
 </div>
 <div id="footer">
 	<div id="pr">
 		<s:include value="footer.jsp"/>
 	</div>
 </div>
+
 </body>
 </html>

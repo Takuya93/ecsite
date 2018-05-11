@@ -14,13 +14,6 @@
 <link rel="stylesheet" type="text/css" href="./style/home.css">
 </head>
 <body>
-	<ul>
-		<li><a class="image" href='<s:url action="GoHomeAction"/>'><img src="./image/home.jpg" width="80%" height="80%"></a></li>
-		<li><a class="head" href='<s:url action="HomeAction"/>'>ログイン</a></li>
-		<li><a class="head" href='<s:url action="MyPageAction"/>'>マイページ</a></li>
-		<li><a class="head" href='<s:url action="CartAction"/>'>カート</a></li>
-		<li><a class="head" href='<s:url action="BuyItemAction"/>'>商品</a></li>
-	</ul>
-
+		<p class="fword">&copy;internous|EC_Ookawa</p>
 </body>
 </html>

@@ -30,11 +30,28 @@
 <result name="error">home.jsp</result>
 </action>
 
+<!-- BuyItemInfoAction -->
+<action name="BuyItemInfoAction" class="com.internousdev.ec.action.BuyItemInfoAction" method="execute">
+<result name="success">buyItemInfo.jsp</result>
+</action>
+
+
 <!-- UserCreateAction -->
 <action name="UserCreateAction" class="com.internousdev.ec.action.UserCreateAction" method="execute">
 <result name="success">userCreate.jsp</result>
 </action>
 
+<!-- UserCreateConfirmAction -->
+<action name="UserCreateConfirmAction" class="com.internousdev.ec.action.UserCreateConfirmAction" method="execute">
+<result name="success">userCreateConfirm.jsp</result>
+<result name="error">userCreate.jsp</result>
+</action>
+
+<!-- UserCreateCompleteAction -->
+<action name="UserCreateCompleteAction" class="com.internousdev.ec.action.UserCreateCompleteAction" method="execute">
+<result name="success">userCreateComplete.jsp</result>
+<result name="error">userCreateConfirm.jsp</result>
+</action>
 
 	</package>
 

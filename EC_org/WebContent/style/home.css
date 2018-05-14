@@ -1,5 +1,5 @@
 @CHARSET "UTF-8";
-body {
+		body {
 		   margin:0;
 		   padding:0;
 		   line-height:1.6;
@@ -8,6 +8,11 @@ body {
 		   font-size:12px;
 		   color:#333;
 		   background:#fff;
+		   background-image: url("../image/homeback.jpg")
+		}
+		.mainbody{
+			height: 100%;
+			background: rgba(255,255,255,0.5);
 		}
 
 		table {
@@ -65,7 +70,7 @@ body {
 		}
 		.link{
 			text-decoration: none;
-			color:gray;
+			color:black;
 		}
 		.link:hover{
 			color:black;
@@ -87,4 +92,16 @@ body {
 		#text-center {
 			display: inline-block;
 			text-align: center;
+		}
+
+		.itemList{
+		float:left;
+		padding:5px;
+		max-width:50%;
+		display: block;
+ 		margin-left: auto;
+		margin-right: auto;
+		}
+		.itemListfi{
+		clear:both;
 		}

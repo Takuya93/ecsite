@@ -24,7 +24,7 @@ create table item_info_transaction(
 id int not null primary key auto_increment,
 item_name varchar(30),
 item_furigana varchar(30),
-item_image int,
+item_image varchar(30),
 item_price int,
 item_stock int,
 company varchar(30),
@@ -62,7 +62,7 @@ update_date datetime
 INSERT login_user_transaction(login_id,login_pass,user_firstname,user_familyname,user_first_furigana,user_family_furigana,gender)
 VALUE("takuya","1124","拓也","大川","たくや","おおかわ","male");
 INSERT item_info_transaction(item_name,item_image,item_price,item_stock,company)
-VALUE("PEN","1","100","40","ookawa"),
-	("toothbrush","2","120","20","ookawa"),
-	("dog","3","60000","5","ookawa");
+VALUE("PEN","./image/item1.jpg","100","40","ookawa"),
+	("toothbrush","./image/item2.jpg","120","20","ookawa"),
+	("dog","./image/item3.jpg","60000","5","ookawa");
 

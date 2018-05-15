@@ -25,11 +25,22 @@
 	<div id="top">
 		<p>UserCreate</p>
 	</div>
-		<s:if test="errorMassage != ''">
-			<s:property value="errorMassage" escape="false"/>
-		</s:if>
 		<table>
 			<s:form action="UserCreateConfirmAction">
+
+				<tr>
+					<td>
+					<label>ユーザー名:</label>
+					</td>
+					<td>
+					<input type="text" placeholder="ユーザー名を入力" name="userName" value="">
+					</td>
+					<td>
+					<s:if test="errorMessage3 != ''">
+			<s:property value="errorMessage3" escape="false"/>
+		  		</s:if>
+					</td>
+				</tr>
 				<tr>
 					<td>
 					<label>ログインID:</label>
@@ -37,6 +48,11 @@
 					<td>
 					<input type="text"  placeholder="IDを入力" name="loginUserId" value="">
 					</td>
+					<td>
+					<s:if test="errorMessage1 != ''">
+			<s:property value="errorMessage1" escape="false"/>
+		  		</s:if>
+		  			</td>
 				</tr>
 				<tr>
 					<td>
@@ -45,20 +61,21 @@
 					<td>
 					<input type="password" placeholder="パスワードを入力" name="loginPassword" value="">
 					</td>
-				</tr>
-				<tr>
 					<td>
-					<label>ユーザー名:</label>
-					</td>
-					<td>
-					<input type="text" placeholder="ユーザー名を入力" name="userName" value="">
+					<s:if test="errorMessage2 != ''">
+			<s:property value="errorMessage2" escape="false"/>
+		  		</s:if>
 					</td>
 				</tr>
 				<tr>
 					<td>
 					<s:submit value="登録"/>
+					</td>
+				</tr>
 			</s:form>
 		</table>
+
+
 		<br><br><br>
 		<div id="text_center">
 			<p>ホーム画面へ戻るには<a class="link" href='<s:url action="GoHomeAction"/>'>こちら</a></p>

@@ -20,7 +20,10 @@ public class UserCreateCompleteDAO {
 			preparedStatement.setString(1, loginUserId);
 			preparedStatement.setString(2, loginUserPassword);
 			preparedStatement.setString(3, userName);
-			preparedStatement.setString(3, dateUtil.getDate());
+			preparedStatement.setString(4, dateUtil.getDate());
+
+			preparedStatement.execute();
+
 		}catch(SQLException e){
 			e.printStackTrace();
 		}finally{

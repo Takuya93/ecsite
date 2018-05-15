@@ -31,6 +31,14 @@
 			<s:form action="UserCreateCompleteAction">
 				<tr id="box">
 						<td>
+							<label>ユーザー名:</label>
+						</td>
+						<td>
+							<s:property value="userName" escape="false" />
+						</td>
+					</tr>
+				<tr id="box">
+						<td>
 							<label>ログインID:</label>
 						</td>
 						<td>
@@ -43,14 +51,6 @@
 						</td>
 						<td>
 							<s:property value="loginPassword" escape="false" />
-						</td>
-					</tr>
-					<tr id="box">
-						<td>
-							<label>ユーザー名:</label>
-						</td>
-						<td>
-							<s:property value="userName" escape="false" />
 						</td>
 					</tr>
 					<tr>

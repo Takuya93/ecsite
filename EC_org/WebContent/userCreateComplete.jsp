@@ -14,6 +14,7 @@
 <link rel="stylesheet" type="text/css" href="./style/home.css">
 </head>
 <body>
+<div class="mainbody">
 <div id="header">
 	<div id="pr">
 		<s:include value="header.jsp"/>
@@ -37,6 +38,6 @@
 		<s:include value="footer.jsp"/>
 	</div>
 </div>
-
+</div>
 </body>
 </html>

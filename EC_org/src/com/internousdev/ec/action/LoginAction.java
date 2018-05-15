@@ -14,6 +14,8 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	public Map<String,Object> session;
 	private LoginDAO loginDAO = new LoginDAO();
 	private LoginDTO loginDTO = new LoginDTO();
+	private String errorMessage1;
+	private String errorMessage2;
 
 	public String execute(){
 		String result = ERROR;
@@ -25,7 +27,20 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		if(((LoginDTO) session.get("loginUser")).getLoginFlg()){
 			result = SUCCESS;
 			session.put("login_user_id",loginDTO.getLoginId());
+			return result;
 		}
+		if(loginUserId.isEmpty()){
+			setErrorMessage1("IDが正しくありません");
+			result = ERROR;
+			if(loginPassword.isEmpty()){
+				setErrorMessage2("パスワードが正しくありません");
+			}}
+		if(loginPassword.isEmpty()){
+			setErrorMessage2("パスワードが正しくありません");
+			result = ERROR;
+			if(loginUserId.isEmpty()){
+				setErrorMessage1("IDが正しくありません");
+			}}
 		return result;
 	}
 	public String getLoginUserId(){
@@ -44,6 +59,18 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	@Override
 	public void setSession(Map<String,Object> session){
 		this.session = session;
+	}
+	public String getErrorMessage1(){
+		return errorMessage1;
+	}
+	public void setErrorMessage1(String errorMessage1){
+		this.errorMessage1 = errorMessage1;
+	}
+	public String getErrorMessage2(){
+		return errorMessage2;
+	}
+	public void setErrorMessage2(String errorMessage2){
+		this.errorMessage2 = errorMessage2;
 	}
 
 }

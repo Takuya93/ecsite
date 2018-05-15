@@ -8,10 +8,8 @@ create table login_user_transaction(
 id int not null primary key auto_increment,
 login_id varchar(16),
 login_pass varchar(16),
-user_firstname varchar(50),
-user_familyname varchar(50),
-user_first_furigana varchar(50),
-user_family_furigana varchar(50),
+user_name varchar(50),
+user_furigana varchar(50),
 gender enum('male','female'),
 email varchar(30),
 insert_date datetime,
@@ -59,8 +57,8 @@ insert_date datetime,
 update_date datetime
 );
 
-INSERT login_user_transaction(login_id,login_pass,user_firstname,user_familyname,user_first_furigana,user_family_furigana,gender)
-VALUE("takuya","1124","拓也","大川","たくや","おおかわ","male");
+INSERT login_user_transaction(login_id,login_pass,user_name,user_furigana,gender)
+VALUE("takuya","1124","大川拓也","おおかわたくや","male");
 INSERT item_info_transaction(item_name,item_image,item_price,item_stock,company)
 VALUE("PEN","./image/item1.jpg","100","40","ookawa"),
 	("toothbrush","./image/item2.jpg","120","20","ookawa"),

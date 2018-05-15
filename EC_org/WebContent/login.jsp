@@ -27,12 +27,23 @@
 	</div>
 	<div>
 		<h3>ログインをお願いします。</h3>
-		<s:form action="LoginAction">
-			<s:textfield name="loginUserId" placeholder="IDを入力"/>
-			<s:password name="loginPassword" placeholder="パスワードを入力"/>
-			<s:submit value="ログイン"/>
-		</s:form>
-		<br>
+		<table>
+			<s:form action="LoginAction">
+				<tr>
+					<td><s:textfield name="loginUserId" placeholder="IDを入力"/></td>
+					<td><s:if test="errorMessage1 != ''"/><s:property value="errorMessage1" escape="false"/></td>
+				</tr>
+				<tr>
+					<td><s:password name="loginPassword" placeholder="パスワードを入力"/></td>
+					<td><s:if test="errorMessage2 != ''"/><s:property value="errorMessage2" escape="false"/></td>
+				</tr>
+				<tr>
+					<td><s:submit value="ログイン"/></td>
+				</tr>
+			</s:form>
+		</table>
+
+		<br><br><br>
 		<div id="text-link">
 			<p>新規ユーザー登録は<a class="link" href='<s:url action="UserCreateAction"/>'>こちら</a></p>
 			<p>Homeへ戻る場合は<a class="link" href='<s:url action="GoHomeAction"/>'>こちら</a></p>

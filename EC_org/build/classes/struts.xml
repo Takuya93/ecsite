@@ -24,6 +24,12 @@
 <result name="error">login.jsp</result>
 </action>
 
+<!-- LogoutAction -->
+<action name="LogoutAction" class="com.internousdev.ec.action.LogoutAction" method="execute">
+<result name="success">home.jsp</result>
+</action>
+
+
 <!-- BuyItemAction -->
 <action name="BuyItemAction" class="com.internousdev.ec.action.BuyItemAction" method="execute">
 <result name="success">buyItem.jsp</result>
@@ -51,6 +57,12 @@
 <action name="UserCreateCompleteAction" class="com.internousdev.ec.action.UserCreateCompleteAction" method="execute">
 <result name="success">userCreateComplete.jsp</result>
 <result name="error">userCreateConfirm.jsp</result>
+</action>
+
+<!-- MyPageAction -->
+<action name="MyPageAction" class="com.internousdev.ec.action.MyPageAction" method="execute">
+<result name="success">myPage.jsp</result>
+<result name="error">home.jsp</result>
 </action>
 
 	</package>

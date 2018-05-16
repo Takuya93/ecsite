@@ -28,7 +28,7 @@
 		<h3>登録が完了しました。</h3>
 
 		<br><br><br>
-		<a href='<s:url action="GoHomeAction"/>'>ホームへ</a>
+		<a class="link" href='<s:url action="GoHomeAction"/>'>ホームへ</a>
 
 	</div>
 </div>

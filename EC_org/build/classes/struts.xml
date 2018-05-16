@@ -41,6 +41,16 @@
 <result name="success">buyItemInfo.jsp</result>
 </action>
 
+<!-- CartAction -->
+<action name="CartAction" class="com.internousdev.ec.action.CartAction" method="execute">
+<result name="success">cart.jsp</result>
+<result name="error">home.jsp</result>
+</action>
+
+<!-- BuyItemCompleteAction -->
+<action name="BuyItemCompleteAction" class="com.internousdev.ec.action.BuyItemCompleteAction" method="execute">
+<result name="success">buyItemComplete.jsp</result>
+</action>
 
 <!-- UserCreateAction -->
 <action name="UserCreateAction" class="com.internousdev.ec.action.UserCreateAction" method="execute">

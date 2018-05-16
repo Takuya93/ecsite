@@ -55,7 +55,7 @@
 		<s:submit value="カートに入れる"/>
 	</s:form>
 	<s:if test="#session.id !=null">
-	<p>ログアウトするには<a href='<s:url action="LogoutAction" />'>こちら</a></p>
+	<p>ログアウトするには<a class="link" href='<s:url action="LogoutAction" />'>こちら</a></p>
 	</s:if>
 	</div>
 </div>

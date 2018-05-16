@@ -11,8 +11,64 @@
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
 <title>cart</title>
+<link rel="stylesheet" type="text/css" href="./style/home.css">
 </head>
 <body>
+<div class="mainbody">
+<div id="header">
+	<div id="pr">
+		<s:include value="header.jsp"/>
+	</div>
+</div>
+<div id="main">
+	<div id="top">
+		<p>cart</p>
+	</div>
+	<div>
+		<s:form action="BuyItemCompleteAction">
+			<s:iterator value="session.cartDTOList">
+			<div class="cart_item">
+				<div>
+					<img src='<s:property value="session.buyItems.itemImage"/>' style="width:70px; height:70px;">
+				</div>
+				<div>
+					<span>ID:</span>
+					<s:property value="id"/>
+				</div>
+				<div>
+					<span>購入者:</span>
+					<s:property value="userId"/>
+				</div>
+				<div>
+					<span>値段:</span>
+					<s:property value="itemId"/>
+				</div>
+				<div>
+					<span>購入個数:</span>
+					<s:property value="buyCount"/>
+				</div>
+				<div>
+					<span>商品名:</span>
+					<s:property value="itemName"/>
+				</div>
+				</div>
+				</s:iterator>
+				<s:submit value="購入"/>
+		</s:form>
+		<br><br><br>
+		<div>
+			<p><a class="link" href='<s:url action="BuyItemAction"/>'>商品一覧</a></p>
+		</div>
+	<div id="footer">
+		<div id="pr">
+			<s:include value="footer.jsp"/>
+		</div>
+	</div>
+	</div>
 
+
+
+</div>
+</div>
 </body>
 </html>

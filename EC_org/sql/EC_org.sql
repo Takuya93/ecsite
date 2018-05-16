@@ -52,6 +52,7 @@ id int primary key not null auto_increment,
 user_id varchar(16),
 item_id int,
 total_price int,
+pay varchar(16),
 buy_count int,
 insert_date datetime,
 update_date datetime

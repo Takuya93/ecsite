@@ -30,7 +30,7 @@
 		<s:iterator value="session.buyItemList">
 			<div class="itemList">
 				<a class="link" href='<s:url action="BuyItemInfoAction"><s:param name="id" value="id"/></s:url>'>
-					<img src="<s:property value='itemImage'/>" style="width:70px; height:70px;"><br>
+					<img src="<s:property value='itemImage'/>" style="width:120px; height:120px;"><br>
 					<s:property value="itemName"/>
 				</a>
 			</div>

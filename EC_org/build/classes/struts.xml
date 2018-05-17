@@ -72,7 +72,7 @@
 <!-- MyPageAction -->
 <action name="MyPageAction" class="com.internousdev.ec.action.MyPageAction" method="execute">
 <result name="success">myPage.jsp</result>
-<result name="error">home.jsp</result>
+<result name="error">login.jsp</result>
 </action>
 
 	</package>

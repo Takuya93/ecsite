@@ -8,6 +8,7 @@ public class CartDTO {
 	private int totalPrice;
 	private int buyCount;
 	private String itemName;
+	private int itemPrice;
 
 	public String getPay(){
 		return pay;
@@ -51,6 +52,11 @@ public class CartDTO {
 	public void setBuyCount(int buyCount){
 		this.buyCount = buyCount;
 	}
-
+	public int getItemPrice(){
+		return itemPrice;
+	}
+	public void setItemPrice(int itemPrice){
+		this.itemPrice = itemPrice;
+	}
 
 }

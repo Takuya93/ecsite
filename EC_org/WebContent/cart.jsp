@@ -26,34 +26,21 @@
 	</div>
 	<div>
 		<s:form action="BuyItemCompleteAction">
+		<table border="1">
 			<s:iterator value="session.cartDTOList">
-			<div class="cart_item">
-				<div>
-					<img src='<s:property value="session.buyItems.itemImage"/>' style="width:70px; height:70px;">
-				</div>
-				<div>
-					<span>ID:</span>
-					<s:property value="id"/>
-				</div>
-				<div>
-					<span>購入者:</span>
-					<s:property value="userId"/>
-				</div>
-				<div>
-					<span>値段:</span>
-					<s:property value="itemId"/>
-				</div>
-				<div>
-					<span>購入個数:</span>
-					<s:property value="buyCount"/>
-				</div>
-				<div>
-					<span>商品名:</span>
-					<s:property value="itemName"/>
-				</div>
-				</div>
-				</s:iterator>
+
+			<tr>
+				<td><span>商品名:</span><s:property value="itemName"/></td>
+				<td><span>値段:</span><s:property value="itemPrice"/></td>
+				<td><span>購入個数:</span><s:property value="buyCount"/></td>
+			</tr>
+
+			</s:iterator>
+				</table>
+			<div id="text-center">
+				<p>合計金額:<s:property value="totalPrice"/></p>
 				<s:submit value="購入"/>
+			</div>
 		</s:form>
 		<br><br><br>
 		<div>

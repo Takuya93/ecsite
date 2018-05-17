@@ -17,7 +17,7 @@ public class MyPageDAO {
 	public ArrayList<MyPageDTO> getMyPageUserInfo(String user_master_id) throws SQLException{
 		ArrayList<MyPageDTO> myPageDTO = new ArrayList<MyPageDTO>();
 
-		String sql = "SELECT ubit.id, iit.item_name, ubit.total_price, ubit.total_count, ubit.pay, ubit.insert_date FROM user_buy_item_transaction ubit LEFT JOIN item_info_transaction iit ON ubit.item_transaction_id = iit.id WHERE ubit.user_master_id = ? ORDER BUY insert_date DESC";
+		String sql = "SELECT ubit.id, iit.item_name, ubit.total_price, ubit.total_count, ubit.pay, ubit.insert_date FROM user_buy_item_transaction ubit LEFT JOIN item_info_transaction iit ON ubit.item_transaction_id = iit.id where ubit.user_master_id  = ? ORDER BY insert_date DESC";
 
 		try{
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);

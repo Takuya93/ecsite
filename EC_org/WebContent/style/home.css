@@ -1,14 +1,15 @@
 @CHARSET "UTF-8";
-		body {
-		   margin:0;
-		   padding:0;
-		   line-height:1.6;
-		   letter-spacing:1px;
-		   font-family:Verdana, Helvetica, sans-serif;
-		   font-size:12px;
-		   color:#333;
-		   background:#fff;
-		   background-image: url("../image/homeback.jpg")
+		html,body {
+		  height:100%;
+		  margin:0;
+		  padding:0;
+		  line-height:1.6;
+		  letter-spacing:1px;
+		  font-family:Verdana, Helvetica, sans-serif;
+		  font-size:12px;
+		  color:#333;
+		  background:#fff;
+		  background-image: url("../image/homeback.jpg")
 		}
 		.mainbody{
 			height: auto !important;
@@ -20,10 +21,11 @@
 		}
 
 		table {
-			text-align:center;
+			text-align:left;
 			margin:0 auto;
 			white-space:nowrap;
 			table-layout:fixed;
+
 		}
 		td{
 		white-space: nowrap;
@@ -108,13 +110,17 @@
 		}
 
 		.itemList{
+		width:33%;
+		height:33%;
 		float:left;
-		padding:5px;
-		max-width:50%;
-		display: block;
- 		margin-left: auto;
-		margin-right: auto;
+		margin:1px;
+		margin-bottom:2px;
+
 		}
 		.itemListfi{
 		clear:both;
 		}
+		.red{
+			color:red;
+		}
+

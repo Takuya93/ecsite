@@ -30,17 +30,13 @@ public class LoginAction extends ActionSupport implements SessionAware{
 			return result;
 		}
 		if(loginUserId.isEmpty()){
-			setErrorMessage1("IDが正しくありません");
+			setErrorMessage1("IDが未記入です");
 			result = ERROR;
-			if(loginPassword.isEmpty()){
-				setErrorMessage2("パスワードが正しくありません");
-			}}
-		if(loginPassword.isEmpty()){
-			setErrorMessage2("パスワードが正しくありません");
+		}if(loginPassword.isEmpty()){
+			setErrorMessage2("パスワードが未記入です");
 			result = ERROR;
-			if(loginUserId.isEmpty()){
-				setErrorMessage1("IDが正しくありません");
-			}}
+			}
+
 		return result;
 	}
 	public String getLoginUserId(){

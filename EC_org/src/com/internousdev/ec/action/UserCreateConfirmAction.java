@@ -18,6 +18,7 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 
 	public String execute(){
 
+
 		String result = SUCCESS;
 
 		if(!(loginUserId.equals("")) && !(loginPassword.equals("")) && !(userName.equals(""))){
@@ -25,34 +26,16 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 			session.put("loginPassword",loginPassword);
 			session.put("userName",userName);
 		}
-		else if(loginUserId.isEmpty()){
+		if(loginUserId.isEmpty()){
 				setErrorMessage1("IDが入力されていません。");
-
-		if(loginPassword.isEmpty()){
+				result = ERROR;
+		}if(loginPassword.isEmpty()){
 				setErrorMessage2("パスワードが入力されていません。");
-		}
-		if(userName.isEmpty()){
+				result = ERROR;
+		}if(userName.isEmpty()){
 				setErrorMessage3("ユーザー名が入力されていません。");
-		}		result = ERROR;}
-		else if(loginPassword.isEmpty()){
-			setErrorMessage2("パスワードが入力されていません。");
-
-		if(userName.isEmpty()){
-			setErrorMessage3("ユーザー名が入力されていません。");
+				result = ERROR;
 		}
-		if(loginUserId.isEmpty()){
-			setErrorMessage1("IDが入力されていません。");
-		}		result = ERROR;}
-		else if(userName.isEmpty()){
-			setErrorMessage3("ユーザー名が入力されていません。");
-
-		if(loginUserId.isEmpty()){
-				setErrorMessage1("IDが入力されていません。");
-		}
-		if(loginPassword.isEmpty()){
-				setErrorMessage2("パスワードが入力されていません。");
-		}		result = ERROR;}
-
 		return result;
 	}
 

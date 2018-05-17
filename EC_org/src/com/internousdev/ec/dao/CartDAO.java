@@ -14,7 +14,7 @@ import com.internousdev.ec.util.DateUtil;
 public class CartDAO {
 	private DateUtil dateUtil = new DateUtil();
 
-	public void createCart(String user_id, int item_id, int total_price, int buy_count, String pay) throws SQLException{
+	public void createCart(String user_id, int item_id,int total_price, int buy_count, String pay) throws SQLException{
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
 

@@ -63,5 +63,12 @@ VALUE("takuya","1124","大川拓也","おおかわたくや","male");
 INSERT item_info_transaction(item_name,item_image,item_price,item_stock,company)
 VALUE("PEN","./image/item1.jpg","100","40","ookawa"),
 	("toothbrush","./image/item2.jpg","120","20","ookawa"),
-	("dog","./image/item3.jpg","60000","5","ookawa");
+	("dog","./image/item3.jpg","60000","5","ookawa"),
+	("beans","./image/item4.jpg","240","30","ookawa"),
+	("marinba","./image/item5.jpg","100000","5","ookawa"),
+	("water","./image/item6.jpg","98","20","ookawa"),
+	("tsumiki","./image/item7.jpg","800","10","ookawa"),
+	("box","./image/item8.jpg","500","10","ookawa"),
+	("milk","./image/item9.jpg","120","20","ookawa");
+
 

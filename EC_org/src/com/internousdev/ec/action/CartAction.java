@@ -37,7 +37,7 @@ public class CartAction extends ActionSupport implements SessionAware{
 			session.put("pay","現金払い");
 		}
 
-		cartDAO.createCart(session.get("login_user_id").toString(), buyItemDTO.getId(), Integer.parseInt(session.get("total_price").toString()), Integer.parseInt(session.get("buy_count").toString()),session.get("pay").toString());
+		cartDAO.createCart(session.get("login_user_id").toString(), buyItemDTO.getId(), buyItemDTO.getItemPrice(), Integer.parseInt(session.get("total_price").toString()), Integer.parseInt(session.get("buy_count").toString()),session.get("pay").toString());
 		List<CartDTO> cartDTOList = cartDAO.getCartInfo(session.get("login_user_id").toString());
 
 		session.put("cartDTOList",cartDTOList);

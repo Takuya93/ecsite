@@ -14,20 +14,21 @@ import com.internousdev.ec.util.DateUtil;
 public class CartDAO {
 	private DateUtil dateUtil = new DateUtil();
 
-	public void createCart(String user_id, int item_id,int total_price, int buy_count, String pay) throws SQLException{
+	public void createCart(String user_id, int item_id, String item_price, int total_price, int buy_count, String pay) throws SQLException{
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
 
-		String sql="INSERT INTO cart(user_id, item_id, total_price, buy_count, pay, insert_date) VALUES(?,?,?,?,?,?)";
+		String sql="INSERT INTO cart(user_id, item_id, item_price, total_price, buy_count, pay, insert_date) VALUES(?,?,?,?,?,?,?)";
 
 		try{
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setString(1, user_id);
 			preparedStatement.setInt(2, item_id);
-			preparedStatement.setInt(3, total_price);
-			preparedStatement.setInt(4, buy_count);
-			preparedStatement.setString(5, pay);
-			preparedStatement.setString(6, dateUtil.getDate());
+			preparedStatement.setString(3, item_price);
+			preparedStatement.setInt(4, total_price);
+			preparedStatement.setInt(5, buy_count);
+			preparedStatement.setString(6, pay);
+			preparedStatement.setString(7, dateUtil.getDate());
 
 			preparedStatement.executeUpdate();
 		}catch(Exception e){
@@ -56,6 +57,7 @@ public class CartDAO {
 					cartDTO.setId(resultSet.getInt("id"));
 					cartDTO.setItemId(resultSet.getInt("item_id"));
 					cartDTO.setItemName(resultSet.getString("item_name"));
+					cartDTO.setItemPrice(resultSet.getString("item_price"));
 					cartDTO.setTotalPrice(resultSet.getInt("total_price"));
 					cartDTO.setUserId(resultSet.getString("user_id"));
 					cartDTO.setBuyCount(resultSet.getInt("buy_count"));

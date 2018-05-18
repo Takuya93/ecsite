@@ -25,7 +25,7 @@
 		<li><a class="head" href='<s:url action="MyPageAction"/>'>マイページ</a></li>
 		<li><a class="head" href='<s:url action="BuyItemAction"/>'>商品</a></li>
 		<s:if test="#session.login_user_id !=null">
-		<li><a class="head" href='<s:url action="CartAction"/>'>カート</a></li>
+		<li><a class="head" href='<s:url action="CartCompAction"/>'>カート</a></li>
 		</s:if>
 	</ul>
 

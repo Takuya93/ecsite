@@ -1,6 +1,7 @@
 package com.internousdev.ec.action;
 
 import java.sql.SQLException;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -12,36 +13,42 @@ import com.internousdev.ec.dto.CartDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class CartAction extends ActionSupport implements SessionAware{
+
 	public Map<String,Object> session;
 	private int count;
-	private int pay;
+	int totalPriceAll = 0;
 
 	public String execute() throws NumberFormatException, SQLException{
-		String result=SUCCESS;
 
-		if(!session.containsKey("login_user_id")){
-			return ERROR;
-		}
+		String result=SUCCESS;
 
 		BuyItemDTO buyItemDTO = new BuyItemDTO();
 		buyItemDTO = (BuyItemDTO) session.get("buyItems");
 		CartDAO cartDAO = new CartDAO();
 
+
 		session.put("buy_count",count);
-		session.put("total_price", (Integer.parseInt(buyItemDTO.getItemPrice()) * count));
+		session.put("total_price", (Integer.parseInt(buyItemDTO.getItemPrice()) * count ));
 
-		if(pay == 1){
-			session.put("pay","クレジットカード");
+	cartDAO.createCart(session.get("login_user_id").toString(), buyItemDTO.getId(), buyItemDTO.getItemPrice(), Integer.parseInt(session.get("total_price").toString()), Integer.parseInt(session.get("buy_count").toString()),session.get("pay").toString());
 
-		}else{
-			session.put("pay","現金払い");
-		}
+	List<CartDTO> cartDTOList = cartDAO.getCartInfo(session.get("login_user_id").toString());
 
-		cartDAO.createCart(session.get("login_user_id").toString(), buyItemDTO.getId(), buyItemDTO.getItemPrice(), Integer.parseInt(session.get("total_price").toString()), Integer.parseInt(session.get("buy_count").toString()),session.get("pay").toString());
-		List<CartDTO> cartDTOList = cartDAO.getCartInfo(session.get("login_user_id").toString());
 
-		session.put("cartDTOList",cartDTOList);
-		return result;
+
+
+	Iterator<CartDTO> iterator = cartDTOList.iterator();
+	if(!(iterator.hasNext())){
+
+		totalPriceAll = totalPriceAll + Integer.parseInt(session.get("total_price").toString());
+
+	}
+
+	session.put("totalPriceAll", String.valueOf(totalPriceAll));
+
+	session.put("cartDTOList",cartDTOList);
+
+	return result;
 	}
 
 	@Override
@@ -56,5 +63,4 @@ public class CartAction extends ActionSupport implements SessionAware{
 	public void setCount(int count){
 		this.count = count;
 	}
-
 }

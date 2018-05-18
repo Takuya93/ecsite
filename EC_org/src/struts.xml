@@ -43,8 +43,13 @@
 
 <!-- CartAction -->
 <action name="CartAction" class="com.internousdev.ec.action.CartAction" method="execute">
-<result name="success">cart.jsp</result>
+<result name="success" type="redirect">CartCompAction</result>
 <result name="error">home.jsp</result>
+</action>
+
+<!-- CartCompAction -->
+<action name="CartCompAction" class="com.internousdev.ec.action.CartCompAction" method="execute">
+<result name="success">cart.jsp</result>
 </action>
 
 <!-- BuyItemCompleteAction -->

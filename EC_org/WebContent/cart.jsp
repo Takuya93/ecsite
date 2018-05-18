@@ -32,12 +32,13 @@
 				<td><span>商品名:</span><s:property value="itemName"/></td>
 				<td><span>値段:</span><s:property value="itemPrice"/></td>
 				<td><span>購入個数:</span><s:property value="buyCount"/></td>
+
 			</tr>
 			</s:iterator>
 				</table>
 			<div id="text-center">
 
-			<span>合計金額:</span><s:property value="session.cartDTOList.totalPrice"/>
+			<span>合計金額:</span><s:property value="session.totalPriceAll"/>
 
 
 

@@ -21,9 +21,6 @@
 		</div>
 	</div>
 	<div id="main">
-		<div id="top">
-			<p>Home</p>
-		</div>
 		<div id="text-center">
 		<s:if test="#session.login_user_id == null">
 			<s:form action="HomeAction">

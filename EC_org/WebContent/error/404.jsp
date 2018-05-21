@@ -9,6 +9,7 @@
 <meta http-equiv="Content-Style-Type" content="text/css"/>
 <meta http-equiv="Content-Script-Type" content="text/javascript"/>
 <meta http-equiv="imagetoolbar" content="no"/>
+<meta http-equiv="refresh" content="3;URL=GoHomeAction"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
 <title>404</title>
@@ -25,7 +26,7 @@
 <div id="main">
 	<div id="text_center">
 		<h2>エラーが発生しました！</h2>
-		<p>ホーム画面は<a class="link" href="home.jsp">こちら</a></p>
+		<p><a class="link" href="GoHomeAction">ホーム画面はこちら</a></p>
 
 	</div>
 </div>

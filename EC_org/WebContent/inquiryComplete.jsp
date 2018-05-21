@@ -7,11 +7,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="Content-Style-Type" content="text/css"/>
 <meta http-equiv="Content-Script-Type" content="text/javascript"/>
-<meta http-equiv="imagetoolbar" content="no"/>
+<meta http-equiv="imagetoobar" content="no"/>
+<meta http-equiv="refresh" content="3;URL=GoHomeAction"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
-<title>UserCreateComplete</title>
+<title>InquiryComplete</title>
 <link rel="stylesheet" type="text/css" href="./style/home.css">
+<link rel="stylesheet" type="text/css" href="./style/inquiry.css">
 </head>
 <body>
 <div class="mainbody">
@@ -22,14 +24,39 @@
 </div>
 <div id="main">
 	<div id="top">
-	</div>
-	<div>
-		<h3>登録が完了しました。</h3>
+	<table>
+	<tbody>
+	<tr>
+	 <th>名前</th>
+	 <th>お問い合わせの種類</th>
+	 <th>お問い合わせ内容</th>
+	</tr>
 
-		<br><br><br>
-		<a class="link" href='<s:url action="GoHomeAction"/>'>ホームへ</a>
+	<s:iterator value="#session.inquiryDTOList">
+	 <tr>
 
-	</div>
+	  <td><s:property value="name"/></td>
+
+	  <s:if test='qtype=="company"'>
+	   <td>会社について</td>
+	   </s:if>
+	   <s:if test='qtype=="product"'>
+	    <td>製品について</td>
+	    </s:if>
+
+	    <s:if test='qtype=="support"'>
+	     <td>アフターサポートについて</td>
+	     </s:if>
+
+	     <td><s:property value="body"/></td>
+	     </tr>
+	     </s:iterator>
+
+
+</tbody>
+</table>
+
+</div>
 </div>
 
 <div id="footer">

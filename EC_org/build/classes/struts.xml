@@ -80,6 +80,22 @@
 <result name="error">login.jsp</result>
 </action>
 
+<!-- InquiryAction -->
+<action name="InquiryAction" class="com.internousdev.ec.action.InquiryAction" method="execute">
+<result name="success">inquiry.jsp</result>
+</action>
+
+<!-- InquiryCompleteAction -->
+<action name="InquiryCompleteAction" class="com.internousdev.ec.action.InquiryCompleteAction" method="execute">
+<result name="success">inquiryComplete.jsp</result>
+<result name="error">inquiry.jsp</result>
+</action>
+
+<!-- SearchItemAction -->
+<action name="SearchItemAction" class="com.internousdev.ec.action.SearchItemAction" method="execute">
+<result name="success">buyItem.jsp</result>
+</action>
+
 	</package>
 
 </struts>

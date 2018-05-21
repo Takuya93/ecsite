@@ -18,7 +18,7 @@
 	<div id="logo">
 		<a href='<s:url action="GoHomeAction"/>'>Dog Castle</a>
 	</div>
-	
+
 		<ul id="left">
 			<li><a class="head" href='<s:url action="BuyItemAction"/>'>商品</a></li>
 			<s:if test="#session.login_user_id !=null">
@@ -28,37 +28,31 @@
 			<li><a class="head" href='<s:url action="HomeAction"/>'>ログイン</a></li>
 			</s:else>
 		</ul>
-	
+
 	<div id="center">
-		<form method="post" action="SertchItemAction">
-			<div class="selectCategory">
-			<select name="category" class="selectBox">
-				<option value="0" selected="selected">全てのカテゴリー</option>
-				<option value="1">本</option>
-				<option value="2"></option>
-				<option value="3"></option>
-			</select>			
-			</div>
+		<form method="post" action="SearchItemAction">
 			<div class="serchText">
 				<input type="text" value="" class="search" name="serchName"/>
 			</div>
 			<div class="searchSubmit">
 				<span class="submit"><input type="submit" value="検索" class="submit"></span>
 			</div>
-		
+
 		</form>
 		</div>
-	
-	
-	
+
+
+
 		<ul id="right">
-			<li><a class="head" href='<s:url action="MyPageAction"/>'>マイページ</a></li>
-		
 			<s:if test="#session.login_user_id !=null">
 			<li><a class="head" href='<s:url action="CartCompAction"/>'>カート</a></li>
 			</s:if>
+			<li><a class="head" href='<s:url action="MyPageAction"/>'>マイページ</a></li>
+			<li><a class="head" href='<s:url action="InquiryAction"/>'>問い合わせ</a></li>
+
+
 		</ul>
-	
+
 </div>
 </body>
 </html>

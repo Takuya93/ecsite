@@ -23,7 +23,7 @@
 
 <div id="main">
 	<div id="top">
-		<p>Login</p>
+
 	</div>
 	<div>
 		<h3>ログインをお願いします。</h3>

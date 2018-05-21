@@ -22,7 +22,6 @@
 </div>
 <div id="main">
 	<div id="top">
-		<p>cart</p>
 	</div>
 	<div>
 		<s:form action="BuyItemCompleteAction">

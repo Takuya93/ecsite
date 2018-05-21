@@ -6,11 +6,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="Content-Style-Type" content="text/css"/>
-<meta http-equiv="Content=Script-Type" content="text/javascript"/>
+<meta http-equiv="Content-Script-Type" content="text/javascript"/>
 <meta http-equiv="imagetoolbar" content="no"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
-<title>ItemList</title>
+<title>Inquiry</title>
 <link rel="stylesheet" type="text/css" href="./style/home.css">
 </head>
 <body>
@@ -20,27 +20,27 @@
 		<s:include value="header.jsp"/>
 	</div>
 </div>
-
 <div id="main">
 	<div id="top">
-
 	</div>
+	<div id="inquiry_box">
+	<ul class="inquiry">
+	<li><h2>お問い合わせ</h2></li>
+	<s:form method="post" action="InquiryCompleteAction">
+	<li><label for="name">名前:</label><input type="text" name="name" size="20"></li>
+	<li><label for="qtype">種類:</label>
+	<select name="qtype">
+		<option value="company">会社について</option>
+		<option value="product">製品について</option>
+		<option value="support">アフターサポートについて</option>
+	</select></li>
 
-	<div>
-		<s:iterator value="session.buyItemList">
-			<div class="itemList">
-				<a class="link" href='<s:url action="BuyItemInfoAction"><s:param name="id" value="id"/></s:url>'>
-					<img src="<s:property value='itemImage'/>" style="width:120px; height:120px;"><br>
-					<s:property value="itemName"/>
-				</a>
-			</div>
-		</s:iterator>
+	<li><label for="body">お問い合わせ内容</label></li>
+	<s:textarea name="body" size="400"/>
+	<li><s:submit value="送信"/></li>
+	</s:form>
+	</ul>
 	</div>
-	<div class="itemListfi"></div>
-
-	<p>前画面に戻る場合は<a class="link" href='<s:url action="GoHomeAction"/>'>こちら</a></p>
-	<p>マイページは<a class="link" href='<s:url action="MyPageAction"/>'>こちら</a></p>
-
 
 </div>
 <div id="footer">
@@ -48,6 +48,7 @@
 		<s:include value="footer.jsp"/>
 	</div>
 </div>
+
 </div>
 </body>
 </html>

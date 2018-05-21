@@ -23,7 +23,6 @@
 
 <div id="main">
 	<div id="top">
-		<p>UserCreate</p>
 	</div>
 		<table>
 			<s:form action="UserCreateConfirmAction">

@@ -1,7 +1,6 @@
 package com.internousdev.ec.action;
 
 import java.sql.SQLException;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -16,7 +15,6 @@ public class CartAction extends ActionSupport implements SessionAware{
 
 	public Map<String,Object> session;
 	private int count;
-	int totalPriceAll = 0;
 
 	public String execute() throws NumberFormatException, SQLException{
 
@@ -36,13 +34,18 @@ public class CartAction extends ActionSupport implements SessionAware{
 
 
 
-
-	Iterator<CartDTO> iterator = cartDTOList.iterator();
-	if(!(iterator.hasNext())){
-
-		totalPriceAll = totalPriceAll + Integer.parseInt(session.get("total_price").toString());
-
+//
+//	Iterator<CartDTO> iterator = cartDTOList.iterator();
+//	if(!(iterator.hasNext())){
+//
+//		totalPriceAll = totalPriceAll + Integer.parseInt(session.get("total_price").toString());
+//
+//	}
+	int totalPrice=0;
+	for(CartDTO dto : cartDTOList){
+		totalPrice += dto.getTotalPrice();
 	}
+	int totalPriceAll = totalPrice;
 
 	session.put("totalPriceAll", String.valueOf(totalPriceAll));
 
@@ -50,6 +53,7 @@ public class CartAction extends ActionSupport implements SessionAware{
 
 	return result;
 	}
+
 
 	@Override
 	public void setSession(Map<String,Object> session){

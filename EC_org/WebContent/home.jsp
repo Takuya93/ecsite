@@ -21,6 +21,8 @@
 		</div>
 	</div>
 	<div id="main">
+		<div id="top">
+		</div>
 		<div id="text-center">
 		<s:if test="#session.login_user_id == null">
 			<s:form action="HomeAction">

@@ -59,6 +59,8 @@ insert_date datetime,
 update_date datetime
 );
 
+create table inquiry(name varchar(255),qtype varchar(255),body varchar(255));
+
 INSERT login_user_transaction(login_id,login_pass,user_name,user_furigana,gender)
 VALUE("takuya","1124","大川拓也","おおかわたくや","male");
 INSERT item_info_transaction(item_name,item_image,item_price,item_stock,company)

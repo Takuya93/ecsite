@@ -21,6 +21,7 @@
 	</div>
 </div>
 <div id="main">
+	<div id="top"></div>
 	<div id="top">
 		<p><s:property value="session.loginUser.userName"/>'s MyPage</p>
 	</div>

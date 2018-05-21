@@ -22,7 +22,7 @@
 </div>
 <div id="main">
 	<div id="top">
-		<p>商品詳細</p>
+
 	</div>
 	<div>
 		<s:form action="CartAction">

@@ -5,6 +5,9 @@ public class BuyItemDTO {
 	public String itemImage;
 	public String itemName;
 	public String itemPrice;
+	public int itemStock;
+	public int count;
+	public int total_count;
 
 	public String getItemImage(){
 		return itemImage;
@@ -30,5 +33,24 @@ public class BuyItemDTO {
 	public void setId(int id){
 		this.id = id;
 	}
+	public int getItemStock() {
+		return itemStock;
+	}
+	public void setItemStock(int itemStock) {
+		this.itemStock = itemStock;
+	}
+	public int getCount() {
+		return count;
+	}
+	public void setCount(int count) {
+		this.count = count;
+	}
+	public int getTotal_count() {
+		return total_count;
+	}
+	public void setTotal_count(int total_count) {
+		this.total_count = total_count;
+	}
+	
 
 }

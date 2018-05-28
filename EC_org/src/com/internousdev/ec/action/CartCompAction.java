@@ -13,12 +13,10 @@ public class CartCompAction extends ActionSupport implements SessionAware{
 	private int pay;
 	int totalPriceAll = 0;
 
-	public String execute() throws NumberFormatException, SQLException{
+	public String execute() throws SQLException{
 		String result=SUCCESS;
 
-		if(!session.containsKey("login_user_id")){
-			return ERROR;
-		}
+	
 
 
 

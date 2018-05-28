@@ -27,7 +27,7 @@
 	<div>
 		<s:form action="CartAction">
 		<div>
-			<img src='<s:property value="session.buyItems.itemImage"/>' style="width:70px; height:70px;">
+			<img src='<s:property value="session.buyItems.itemImage"/>' style="width:200px; height:200px; border-radius:20%">
 		</div>
 		<div>
 			<label>ID:</label>
@@ -52,12 +52,13 @@
 			</select>
 		</div>
 
-		<s:submit value="カートに入れる"/>
+		<s:submit class="button" value="カートに入れる"/>
 	</s:form>
 	<s:if test="#session.id !=null">
 	<p>ログアウトするには<a class="link" href='<s:url action="LogoutAction" />'>こちら</a></p>
 	</s:if>
 	</div>
+	<div id="top"></div>
 </div>
 <div id="footer">
 	<div id="pr">

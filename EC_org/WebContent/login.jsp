@@ -27,21 +27,24 @@
 	</div>
 	<div>
 		<h3>ログインをお願いします。</h3>
-		<table>
+		
 			<s:form action="LoginAction">
+			<table class="Form">
 				<tr>
-					<td><s:textfield name="loginUserId" placeholder="IDを入力"/></td>
-					<td><s:if test="errorMessage1 != ''"/><s:property value="errorMessage1" escape="false"/></td>
+					<td><input type="text" name="loginUserId" placeholder="IDを入力" value=""></td>
+					<td class="ErrorMessage"><s:if test="errorMessage1 != ''"><s:property value="errorMessage1" escape="false"/></s:if></td>
 				</tr>
 				<tr>
-					<td><s:password name="loginPassword" placeholder="パスワードを入力"/></td>
-					<td><s:if test="errorMessage2 != ''"/><s:property value="errorMessage2" escape="false"/></td>
+					<td><input type="password" name="loginPassword" placeholder="パスワードを入力" value=""></td>
+					<td class="ErrorMessage"><s:if test="errorMessage2 != ''"><s:property value="errorMessage2" escape="false"/></s:if></td>
 				</tr>
-				<tr>
-					<td><s:submit value="ログイン"/></td>
-				</tr>
+			</table>
+				
+					<div id="text-center"><s:submit class="button" value="ログイン"/></div>
+				
 			</s:form>
-		</table>
+		
+		
 
 		<br><br><br>
 		<div id="text-link">
@@ -50,6 +53,7 @@
 		</div>
 	</div>
 </div>
+<div id="top"></div>
 <div id="footer">
 	<div id="pr">
 		<s:include value="footer.jsp"/>

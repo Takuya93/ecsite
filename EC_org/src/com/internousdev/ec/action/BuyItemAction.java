@@ -11,7 +11,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class BuyItemAction extends ActionSupport implements SessionAware{
 	private int count;
-	private String pay;
+	private int pay;
 	public List<BuyItemDTO> buyItemDTOList;
 	public Map<String,Object> session;
 
@@ -31,10 +31,10 @@ public class BuyItemAction extends ActionSupport implements SessionAware{
 	public void setCount(int count){
 		this.count = count;
 	}
-	public String getPay(){
+	public int getPay(){
 		return pay;
 	}
-	public void setPay(String pay){
+	public void setPay(int pay){
 		this.pay = pay;
 	}
 

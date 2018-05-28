@@ -32,6 +32,11 @@ public class LoginDAO {
 				if(!(resultSet.getString("login_id").equals(null))){
 					loginDTO.setLoginFlg(true);
 				}
+				
+				//login_id=takuya && login_pass=1124で管理者true
+				if(resultSet.getString("login_id").equals("takuya") && resultSet.getString("login_pass").equals("1124")) {
+					loginDTO.setLoginMaster(true);
+				}
 			}
 		}catch(Exception e){
 			e.printStackTrace();

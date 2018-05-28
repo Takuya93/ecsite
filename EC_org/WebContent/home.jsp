@@ -23,10 +23,11 @@
 	<div id="main">
 		<div id="top">
 		</div>
+		<div class="logindog"><img id="biyon" src="./image/logindog.jpg" width="400px" height="300px"></div>
 		<div id="text-center">
 		<s:if test="#session.login_user_id == null">
 			<s:form action="HomeAction">
-				<s:submit value="ログイン画面へ"/>
+				<s:submit class="button" value="ログイン画面へ"/>
 			</s:form>
 		</s:if>
 		<s:if test ="#session.login_user_id !=null">
@@ -37,6 +38,7 @@
 		</div>
 
 		</div>
+		<div id="top"></div>
 	<div id="footer">
 	 	<div id="pr">
 	 	<s:include value="footer.jsp"/>

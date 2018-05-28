@@ -21,28 +21,36 @@
 	</div>
 </div>
 <div id="main">
-	<div id="top">
-	</div>
+	<div id="top"></div>
 	<div id="inquiry_box">
-	<ul class="inquiry">
-	<li><h2>お問い合わせ</h2></li>
-	<s:form method="post" action="InquiryCompleteAction">
-	<li><label for="name">名前:</label><input type="text" name="name" size="20"></li>
-	<li><label for="qtype">種類:</label>
-	<select name="qtype">
+	<h2>お問い合わせ</h2>
+	
+	
+	<s:form action="InquiryConfirmAction">
+	
+	<ul class="FormInquiry">
+	<li><label for="name">名前</label></li>
+	<li><input type="text" name="name" size="20"></li>
+	<li><label for="mail">メールアドレス</label>
+	<li><input type="text" name="mail" value=""></li>
+	<li><label for="qtype">種類</label></li>
+	<li><select name="qtype">
 		<option value="company">会社について</option>
 		<option value="product">製品について</option>
 		<option value="support">アフターサポートについて</option>
 	</select></li>
 
 	<li><label for="body">お問い合わせ内容</label></li>
-	<s:textarea name="body" size="400"/>
-	<li><s:submit value="送信"/></li>
-	</s:form>
+	<li><textarea name="body" cols="30" rows="5"></textarea></li>
 	</ul>
+	
+	<div id="text-center"><s:submit class="buttonInquiry" value="送信"/></div>
+	</s:form>
+	
 	</div>
 
 </div>
+<div id="top"></div>
 <div id="footer">
 	<div id="pr">
 		<s:include value="footer.jsp"/>

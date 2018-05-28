@@ -24,8 +24,10 @@
 <div id="main">
 	<div id="top">
 	</div>
-		<table>
+		
 			<s:form action="UserCreateConfirmAction">
+			
+			<table class="Form">
 
 				<tr>
 					<td>
@@ -34,7 +36,7 @@
 					<td>
 					<input type="text" placeholder="ユーザー名を入力" name="userName" value="">
 					</td>
-					<td>
+					<td class="ErrorMessage">
 					<s:if test="errorMessage3 != ''">
 			<s:property value="errorMessage3" escape="false"/>
 		  		</s:if>
@@ -47,7 +49,7 @@
 					<td>
 					<input type="text"  placeholder="IDを入力" name="loginUserId" value="">
 					</td>
-					<td>
+					<td class="ErrorMessage">
 					<s:if test="errorMessage1 != ''">
 			<s:property value="errorMessage1" escape="false"/>
 		  		</s:if>
@@ -60,19 +62,18 @@
 					<td>
 					<input type="password" placeholder="パスワードを入力" name="loginPassword" value="">
 					</td>
-					<td>
+					<td class="ErrorMessage">
 					<s:if test="errorMessage2 != ''">
 			<s:property value="errorMessage2" escape="false"/>
 		  		</s:if>
 					</td>
 				</tr>
-				<tr>
-					<td>
-					<s:submit value="登録"/>
-					</td>
-				</tr>
+				</table>
+				
+					<div id="text-center"><s:submit class="button" value="登録"/></div>
+				
 			</s:form>
-		</table>
+		
 
 
 		<br><br><br>
@@ -80,7 +81,7 @@
 			<p>ホーム画面へ戻るには<a class="link" href='<s:url action="GoHomeAction"/>'>こちら</a></p>
 		</div>
 </div>
-
+<div id="top"></div>
 <div id="footer">
 	<div id="pr">
 		<s:include value="footer.jsp"/>

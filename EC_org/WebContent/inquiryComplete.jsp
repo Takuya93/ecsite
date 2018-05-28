@@ -13,7 +13,6 @@
 <meta name="keywords" content=""/>
 <title>InquiryComplete</title>
 <link rel="stylesheet" type="text/css" href="./style/home.css">
-<link rel="stylesheet" type="text/css" href="./style/inquiry.css">
 </head>
 <body>
 <div class="mainbody">
@@ -23,41 +22,17 @@
 	</div>
 </div>
 <div id="main">
-	<div id="top">
-	<table>
-	<tbody>
-	<tr>
-	 <th>名前</th>
-	 <th>お問い合わせの種類</th>
-	 <th>お問い合わせ内容</th>
-	</tr>
+	<div id="top"></div>
+	<p>お問い合わせを受け付けました。</p>
 
-	<s:iterator value="#session.inquiryDTOList">
-	 <tr>
+		<br><br>
 
-	  <td><s:property value="name"/></td>
+		
 
-	  <s:if test='qtype=="company"'>
-	   <td>会社について</td>
-	   </s:if>
-	   <s:if test='qtype=="product"'>
-	    <td>製品について</td>
-	    </s:if>
-
-	    <s:if test='qtype=="support"'>
-	     <td>アフターサポートについて</td>
-	     </s:if>
-
-	     <td><s:property value="body"/></td>
-	     </tr>
-	     </s:iterator>
-
-
-</tbody>
-</table>
+		<p>内容確認の後、ご返信をお送りいたします。</p>
 
 </div>
-</div>
+<div id="top"></div>s
 
 <div id="footer">
 	<div id="pr">

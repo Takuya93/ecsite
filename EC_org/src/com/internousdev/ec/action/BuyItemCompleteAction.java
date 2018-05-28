@@ -30,6 +30,8 @@ public class BuyItemCompleteAction extends ActionSupport implements SessionAware
 
 		System.out.println(session.get("login_user_id"));
 		cartDAO.deleteCartInfo(session.get("login_user_id").toString());
+		
+		
 
 		return result;
 	}

@@ -12,14 +12,25 @@
 <meta name="keywords" content=""/>
 <title>header</title>
 <link rel="stylesheet" type="text/css" href="./style/home.css">
+<link rel="shortcut icon" href="./image/fabicon.ico" type="image/vnd.microsoft.icon">
 </head>
 <body>
 <div class="course">
 	<div id="logo">
+	<s:if test="#session.masterId !=null">
+		<a href='<s:url action="GoMasterAction"/>'>Dog Castle</a>
+	</s:if>
+	<s:else>
 		<a href='<s:url action="GoHomeAction"/>'>Dog Castle</a>
+	</s:else>
 	</div>
 
 		<ul id="left">
+			<s:if test="#session.masterId !=null">
+			<li><a class="head" href='<s:url action="GoItemInventoryAction"/>'>商品変更</a></li>
+			<li><a class="head" href='<s:url action="GoItemInsertAction"/>'>商品追加</a></li>
+			</s:if>
+			<s:else>
 			<li><a class="head" href='<s:url action="BuyItemAction"/>'>商品</a></li>
 			<s:if test="#session.login_user_id !=null">
 			<li><a class="head" href='<s:url action="LogoutAction"/>'>ログアウト</a></li>
@@ -27,28 +38,35 @@
 			<s:else>
 			<li><a class="head" href='<s:url action="HomeAction"/>'>ログイン</a></li>
 			</s:else>
+			</s:else>
 		</ul>
 
 	<div id="center">
-		<form method="post" action="SearchItemAction">
-			<div class="serchText">
-				<input type="text" value="" class="search" name="serchName"/>
-			</div>
-			<div class="searchSubmit">
-				<span class="submit"><input type="submit" value="検索" class="submit"></span>
-			</div>
-
+		<s:if test="#session.masterId != null">
+		<a href='<s:url action="LogoutAction"/>'>ログアウト</a>
+		</s:if>
+		<s:else>
+		<form method="post" action="SearchItemAction" class="headerForm">
+				<input type="text" value="" class="search" name="searchName"/>
+				<input type="submit" value="検索" class="button">
 		</form>
+		</s:else>
 		</div>
 
 
 
 		<ul id="right">
+			<s:if test="#session.masterId !=null">
+			<li><a class="head" href='<s:url action="GoItemDeleteAction"/>'>商品削除</a></li>
+			<li><a class="head" href='<s:url action="InquiryAllDeleteAction"/>'>問い合わせ確認</a></li>
+			</s:if>
+			<s:else>
 			<s:if test="#session.login_user_id !=null">
 			<li><a class="head" href='<s:url action="CartCompAction"/>'>カート</a></li>
 			</s:if>
-			<li><a class="head" href='<s:url action="MyPageAction"/>'>マイページ</a></li>
+			<li><a class="head" href='<s:url action="GoMyPageAction"/>'>マイページ</a></li>
 			<li><a class="head" href='<s:url action="InquiryAction"/>'>問い合わせ</a></li>
+			</s:else>
 
 
 		</ul>

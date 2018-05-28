@@ -31,36 +31,33 @@
 				<td><span>商品名:</span><s:property value="itemName"/></td>
 				<td><span>値段:</span><s:property value="itemPrice"/></td>
 				<td><span>購入個数:</span><s:property value="buyCount"/></td>
-
 			</tr>
 			</s:iterator>
 				</table>
 			<div id="text-center">
 
 			<span>合計金額:</span><s:property value="session.totalPriceAll"/>
-
-
-
-				<s:submit value="購入"/>
-
+			
+			<div style="text-center">
+				<span style="display:inline;float:left;"><input type="hidden" name="deleteFlg" value="1">
+				<s:submit class="button" name="deleteFlg" value="削除"/></span>
+				<span style="display:inline;float:left;"><s:submit class="button" value="購入"/></span>
 			</div>
-
+			</div>
 		</s:form>
 
 		<br><br><br>
 		<div>
 			<p><a class="link" href='<s:url action="BuyItemAction"/>'>商品一覧</a></p>
 		</div>
+</div>
+<div id="top"></div>
 	<div id="footer">
 		<div id="pr">
 			<s:include value="footer.jsp"/>
 		</div>
 	</div>
 	</div>
-
-
-
-</div>
 </div>
 </body>
 </html>

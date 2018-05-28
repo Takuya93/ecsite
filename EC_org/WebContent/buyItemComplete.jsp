@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="Content-Style-Type" content="text/css"/>
 <meta http-equiv="Content=Script-Type" content="text/javascript"/>
-<meta http-equiv="refresh" content="3;URL=MyPageAction"/>
+<meta http-equiv="refresh" content="3;URL=GoMyPageAction"/>
 <meta http-equiv="imagetoolbar" content="no"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -32,14 +32,12 @@
 	<br><br><br>
 
 	<p><a class="link" href='<s:url action="GoHomeAction"/>'>ホームへ</a></p>
-
+</div>
+<div id="top"></div>
 <div id="footer">
 	<div id="pr">
 		<s:include value="footer.jsp"/>
 	</div>
-</div>
-
-
 </div>
 </div>
 </body>

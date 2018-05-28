@@ -59,19 +59,20 @@ insert_date datetime,
 update_date datetime
 );
 
-create table inquiry(name varchar(255),qtype varchar(255),body varchar(255));
+create table inquiry(name varchar(255),mail varchar(255),qtype varchar(255),body varchar(255),master_id varchar(50));
 
 INSERT login_user_transaction(login_id,login_pass,user_name,user_furigana,gender)
-VALUE("takuya","1124","大川拓也","おおかわたくや","male");
+VALUE("takuya","1124","大川拓也","おおかわたくや","male"),
+	("taro","1234","山田太郎","やまだたろう","male");
 INSERT item_info_transaction(item_name,item_image,item_price,item_stock,company)
-VALUE("PEN","./image/item1.jpg","100","40","ookawa"),
-	("toothbrush","./image/item2.jpg","120","20","ookawa"),
-	("dog","./image/item3.jpg","60000","5","ookawa"),
-	("beans","./image/item4.jpg","240","30","ookawa"),
-	("marinba","./image/item5.jpg","100000","5","ookawa"),
-	("water","./image/item6.jpg","98","20","ookawa"),
-	("tsumiki","./image/item7.jpg","800","10","ookawa"),
-	("box","./image/item8.jpg","500","10","ookawa"),
-	("milk","./image/item9.jpg","120","20","ookawa");
+VALUE("dogfood_adult","./image/item1.jpg","750","20","ookawa"),
+	("dogfood_small","./image/item2.jpg","750","20","ookawa"),
+	("dogfood_senior","./image/item3.jpg","750","20","ookawa"),
+	("bowl_silver","./image/item4.jpg","400","30","ookawa"),
+	("bowl_pink","./image/item5.jpg","300","30","ookawa"),
+	("bowl_double","./image/item6.jpg","500","30","ookawa"),
+	("harnes_small","./image/item7.jpg","1000","10","ookawa"),
+	("harnes_middle","./image/item8.jpg","1000","10","ookawa"),
+	("harnes_large","./image/item9.jpg","1000","10","ookawa");
 
 

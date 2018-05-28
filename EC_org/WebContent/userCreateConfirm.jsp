@@ -26,8 +26,9 @@
 	</div>
 	<div>
 		<h3>登録内容は以下でよろしいですか。</h3>
-		<table>
+		
 			<s:form action="UserCreateCompleteAction">
+			<table border="1ps">
 				<tr id="box">
 						<td>
 							<label>ユーザー名:</label>
@@ -52,15 +53,16 @@
 							<s:property value="loginPassword" escape="false" />
 						</td>
 					</tr>
-					<tr>
-						<td>
-							<s:submit value="完了" />
-						</td>
-					</tr>
+					</table>
+						<div id="text-center">
+							<s:submit class="button" value="完了" />
+						</div>
+					
 				</s:form>
-		</table>
+		
 	</div>
 </div>
+<div id="top"></div>
 <div id="footer">
 	<div id="pr">
 		<s:include value="footer.jsp"/>

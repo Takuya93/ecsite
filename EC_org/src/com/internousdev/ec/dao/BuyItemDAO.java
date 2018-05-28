@@ -79,6 +79,7 @@ public class BuyItemDAO {
 
 			while(resultSet.next()) {
 				BuyItemDTO buyItemDTO = new BuyItemDTO();
+				buyItemDTO.setItemImage(resultSet.getString("item_image"));
 				buyItemDTO.setId(resultSet.getInt("id"));
 				buyItemDTO.setItemName(resultSet.getString("item_name"));
 				buyItemDTO.setItemPrice(resultSet.getString("item_price"));

@@ -22,9 +22,9 @@
 </div>
 <div id="main">
 	<div id="top"></div>
-	<div id="top">
+	
 		<p><s:property value="session.loginUser.userName"/>'s MyPage</p>
-	</div>
+	
 	<div>
 		<s:if test="myPageList == null">
 			<h3>ご購入情報はありません。</h3>
@@ -51,7 +51,7 @@
 			</table>
 			<s:form action="MyPageAction">
 				<input type="hidden" name="deleteFlg" value="1">
-				<s:submit value="削除" method="delete"/>
+				<s:submit class="button" value="削除" method="delete"/>
 			</s:form>
 		</s:elseif>
 		<s:if test="message !== null">
@@ -60,10 +60,11 @@
 		<br><br><br>
 
 		<div id="text-center">
-			<p>Homeへ戻る場合は<a href='<s:url action="GoHomeAction"/>'>こちら</a>
+			<p><a class="link" href='<s:url action="GoHomeAction"/>'>Homeへ戻る場合はこちら</a>
 		</div>
 
 	</div>
+<div id="top"></div>
 
 </div>
 <div id="footer">

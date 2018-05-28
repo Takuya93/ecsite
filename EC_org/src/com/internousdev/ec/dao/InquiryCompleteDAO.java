@@ -25,8 +25,10 @@ public class InquiryCompleteDAO {
 			while(rs.next()){
 				InquiryDTO dto = new InquiryDTO();
 				dto.setName(rs.getString("name"));
+				dto.setMail(rs.getString("mail"));
 				dto.setQtype(rs.getString("qtype"));
 				dto.setBody(rs.getString("body"));
+				dto.setMaster_id(rs.getString("master_id"));
 				inquiryDTOList.add(dto);
 			}
 		}catch(SQLException e){
@@ -38,18 +40,22 @@ public class InquiryCompleteDAO {
 		}
 		return inquiryDTOList;
 	}
-	public int insert(String name,String qtype,String body){
+	public int insert(String name,String mail,String qtype,String body,String master_id){
 		int ret = 0;
 		DBConnector db = new DBConnector();
 		Connection con = db.getConnection();
 
-		String sql = "insert into inquiry values(?,?,?)";
+		String sql = "insert into inquiry values(?,?,?,?,?)";
 		try{
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setString(1, name);
-			ps.setString(2, qtype);
-			ps.setString(3, body);
+			ps.setString(2, mail);
+			ps.setString(3, qtype);
+			ps.setString(4, body);
+			ps.setString(5, master_id);
+			
 			int i = ps.executeUpdate();
+			
 			if(i > 0){
 				System.out.println(i+"件登録されました");
 				ret = i;
@@ -63,5 +69,35 @@ public class InquiryCompleteDAO {
 		}
 		return ret;
 	}
+	
+	public int inquiryAllDelete(String master_id) throws SQLException{
+
+		String sql = "DELETE FROM inquiry WHERE master_id=?";
+
+		DBConnector dbConnector = new DBConnector();
+
+		Connection connection = dbConnector.getConnection();
+
+		PreparedStatement preparedStatement;
+
+
+		int result = 0;
+
+		try{
+			preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1,master_id);
+
+			result = preparedStatement.executeUpdate();
+
+		}catch(SQLException e){
+			e.printStackTrace();
+
+		}finally{
+			connection.close();
+		}
+
+		return result;
+
+		}
 
 }

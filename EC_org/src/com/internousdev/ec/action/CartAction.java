@@ -15,6 +15,8 @@ public class CartAction extends ActionSupport implements SessionAware{
 
 	public Map<String,Object> session;
 	private int count;
+	private int pay;
+	private String deleteFlg;
 
 	public String execute() throws NumberFormatException, SQLException{
 
@@ -23,12 +25,25 @@ public class CartAction extends ActionSupport implements SessionAware{
 		BuyItemDTO buyItemDTO = new BuyItemDTO();
 		buyItemDTO = (BuyItemDTO) session.get("buyItems");
 		CartDAO cartDAO = new CartDAO();
+		
+		if(!session.containsKey("login_user_id")){
+			return ERROR;
+		}
+		
+		if(pay == 1){
+			session.put("pay","クレジットカード");
+
+		}else{
+			session.put("pay","現金払い");
+		}
+
 
 
 		session.put("buy_count",count);
 		session.put("total_price", (Integer.parseInt(buyItemDTO.getItemPrice()) * count ));
 
 	cartDAO.createCart(session.get("login_user_id").toString(), buyItemDTO.getId(), buyItemDTO.getItemPrice(), Integer.parseInt(session.get("total_price").toString()), Integer.parseInt(session.get("buy_count").toString()),session.get("pay").toString());
+
 
 	List<CartDTO> cartDTOList = cartDAO.getCartInfo(session.get("login_user_id").toString());
 
@@ -50,7 +65,10 @@ public class CartAction extends ActionSupport implements SessionAware{
 	session.put("totalPriceAll", String.valueOf(totalPriceAll));
 
 	session.put("cartDTOList",cartDTOList);
-
+	
+	
+	
+	
 	return result;
 	}
 

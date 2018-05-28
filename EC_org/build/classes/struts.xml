@@ -20,6 +20,7 @@
 
 <!-- LoginAction -->
 <action name="LoginAction" class="com.internousdev.ec.action.LoginAction" method="execute">
+<result name="master">master.jsp</result>
 <result name="success">home.jsp</result>
 <result name="error">login.jsp</result>
 </action>
@@ -44,7 +45,7 @@
 <!-- CartAction -->
 <action name="CartAction" class="com.internousdev.ec.action.CartAction" method="execute">
 <result name="success" type="redirect">CartCompAction</result>
-<result name="error">home.jsp</result>
+<result name="error">login.jsp</result>
 </action>
 
 <!-- CartCompAction -->
@@ -74,26 +75,107 @@
 <result name="error">userCreateConfirm.jsp</result>
 </action>
 
-<!-- MyPageAction -->
-<action name="MyPageAction" class="com.internousdev.ec.action.MyPageAction" method="execute">
-<result name="success">myPage.jsp</result>
+<!-- GoMyPageAction -->
+<action name="GoMyPageAction" class="com.internousdev.ec.action.GoMyPageAction" method="execute">
+<result name="success">mypage.jsp</result>
 <result name="error">login.jsp</result>
 </action>
+
+<!-- PurchaseHistoryAction -->
+<action name="PurchaseHistoryAction" class="com.internousdev.ec.action.PurchaseHistoryAction" method="execute">
+<result name="success">purchaseHistory.jsp</result>
+<result name="error">mypage.jsp</result>
+</action>
+
+<!-- GoUserDeleteAction -->
+<action name="GoUserDeleteAction" class="com.internousdev.ec.action.GoUserDeleteAction" method="execute">
+<result name="success">userDelete.jsp</result>
+</action> 
+
+<!-- UserDeleteAction -->
+<action name="UserDeleteAction" class="com.internousdev.ec.action.UserDeleteAction" method="execute">
+<result name="success">userDeleteComplete.jsp</result>
+</action>
+
+<!-- GoUserUpdateAction -->
+<action name="GoUserUpdateAction" class="com.internousdev.ec.action.GoUserUpdateAction" method="execute">
+<result name="success">userUpdate.jsp</result>
+</action>
+
 
 <!-- InquiryAction -->
 <action name="InquiryAction" class="com.internousdev.ec.action.InquiryAction" method="execute">
 <result name="success">inquiry.jsp</result>
 </action>
 
+<!-- InquiryConfirmAction -->
+<action name="InquiryConfirmAction" class="com.internousdev.ec.action.InquiryConfirmAction" method="execute">
+<result name="success">inquiryConfirm.jsp</result>
+<result name="error">inquiry.jsp</result>
+</action>
+
 <!-- InquiryCompleteAction -->
 <action name="InquiryCompleteAction" class="com.internousdev.ec.action.InquiryCompleteAction" method="execute">
 <result name="success">inquiryComplete.jsp</result>
-<result name="error">inquiry.jsp</result>
+<result name="error">inquiryConfirm.jsp</result>
 </action>
 
 <!-- SearchItemAction -->
 <action name="SearchItemAction" class="com.internousdev.ec.action.SearchItemAction" method="execute">
 <result name="success">buyItem.jsp</result>
+<result name="error">home.jsp</result>
+</action>
+
+
+<!-- GoMasterAction -->
+<action name="GoMasterAction" class="com.internousdev.ec.action.GoMasterAction" method="execute">
+<result name="success">master.jsp</result>
+</action>
+
+<!-- GoItemInventoryAction -->
+<action name="GoItemInventoryAction" class="com.internousdev.ec.action.GoItemInventoryAction" method="execute">
+<result name="success">inventory.jsp</result>
+</action>
+
+<!-- ItemInventoryAction -->
+<action name="ItemInventoryAction" class="com.internousdev.ec.action.ItemInventoryAction" method="execute">
+<result name="success">inventoryConfirm.jsp</result>
+</action>
+
+<!-- ItemInventoryConfirmAction -->
+<action name="ItemInventoryConfirmAction" class="com.internousdev.ec.action.ItemInventoryConfirmAction" method="execute">
+<result name="success">inventoryComplete.jsp</result>
+</action>
+
+<!-- GoItemInsertAction -->
+<action name="GoItemInsertAction" class="com.internousdev.ec.action.GoItemInsertAction" method="execute">
+<result name="success">itemInsert.jsp</result>
+</action>
+
+<!-- ItemInsertAction -->
+<action name="ItemInsertAction" class="com.internousdev.ec.action.ItemInsertAction" method="execute">
+<result name="success">itemInsertComplete.jsp</result>
+<result name="error">itemInsert.jsp</result>
+</action>
+
+<!-- GoItemDeleteAction -->
+<action name="GoItemDeleteAction" class="com.internousdev.ec.action.GoItemDeleteAction" method="execute">
+<result name="success">itemDelete.jsp</result>
+</action>
+
+<!-- ItemDeleteAction -->
+<action name="ItemDeleteAction" class="com.internousdev.ec.action.ItemDeleteAction" method="execute">
+<result name="success">itemDeleteConfirm.jsp</result>
+</action>
+
+<!-- ItemDeleteConfirmAction -->
+<action name="ItemDeleteConfirmAction" class="com.internousdev.ec.action.ItemDeleteConfirmAction" method="execute">
+<result name="success">itemDeleteComplete.jsp</result>
+</action>
+
+<!-- InquiryAllDeleteAction -->
+<action name="InquiryAllDeleteAction" class="com.internousdev.ec.action.InquiryAllDeleteAction" method="execute">
+<result name="success">inquiryDelete.jsp</result>
 </action>
 
 	</package>

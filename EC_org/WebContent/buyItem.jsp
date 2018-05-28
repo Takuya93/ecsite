@@ -22,20 +22,17 @@
 </div>
 
 <div id="main">
-	<div id="top">
+	<div id="top"></div>
 
-	</div>
-
-	<div>
+	<ul class="itemList">
 		<s:iterator value="session.buyItemList">
-			<div class="itemList">
-				<a class="link" href='<s:url action="BuyItemInfoAction"><s:param name="id" value="id"/></s:url>'>
-					<img src="<s:property value='itemImage'/>" style="width:120px; height:120px;"><br>
+				<li><a class="link" href='<s:url action="BuyItemInfoAction"><s:param name="id" value="id"/></s:url>'>
+					<img src="<s:property value='itemImage'/>" style="width:150px; height:150px; border-radius:20%;"><br>
 					<s:property value="itemName"/>
-				</a>
-			</div>
+				</a></li>
 		</s:iterator>
-	</div>
+	</ul>
+	
 	<div class="itemListfi"></div>
 
 	<p>前画面に戻る場合は<a class="link" href='<s:url action="GoHomeAction"/>'>こちら</a></p>
@@ -43,6 +40,7 @@
 
 
 </div>
+<div id="top"></div>
 <div id="footer">
 	<div id="pr">
 		<s:include value="footer.jsp"/>

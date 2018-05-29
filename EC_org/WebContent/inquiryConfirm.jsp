@@ -65,18 +65,19 @@
 			<tr>
 				<td><input type="button" class="button" value="戻る" onclick="submitAction('InquiryAction')" /></td>
 				<td>
-				<input type="hidden" name="master_id"/>
+				<input type="hidden" name="master_id" value="kanri"/>
 				<input type="button" class="button" value="完了" onclick="submitAction('InquiryCompleteAction')" />
 				</td>
 			</tr>
 			</s:form>
-	
 	</table>
-
-
 </div>
-
-
+<div id="top"></div>
+<div id="footer">
+	<div id="pr">
+		<s:include value="footer.jsp"/>
+	</div>
+</div>
 </div>
 </body>
 </html>

@@ -28,7 +28,7 @@
 		<h3>登録内容は以下でよろしいですか。</h3>
 		
 			<s:form action="UserCreateCompleteAction">
-			<table border="1ps">
+			<table border="1px">
 				<tr id="box">
 						<td>
 							<label>ユーザー名:</label>

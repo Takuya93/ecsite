@@ -15,6 +15,7 @@ public class BuyItemCompleteAction extends ActionSupport implements SessionAware
 	public Map<String,Object> session;
 
 	public String execute() throws SQLException{
+		
 
 		@SuppressWarnings("unchecked")
 		List<CartDTO> cartDTOList = (List<CartDTO>) session.get("cartDTOList");
@@ -23,13 +24,22 @@ public class BuyItemCompleteAction extends ActionSupport implements SessionAware
 		CartDAO cartDAO = new CartDAO();
 		String result = SUCCESS;
 
+		
+		if(cartDTOList == null) {
+			return ERROR;
+		}
+		
 		for(int i=0; i < cartDTOList.size(); i++){
 			buyItemCompleteDAO.buyItemInfo(cartDTOList.get(i).getUserId(), cartDTOList.get(i).getItemId(),cartDTOList.get(i).getTotalPrice(),cartDTOList.get(i).getBuyCount(),cartDTOList.get(i).getPay());
-
 		}
+		
+		
 
 		System.out.println(session.get("login_user_id"));
 		cartDAO.deleteCartInfo(session.get("login_user_id").toString());
+		
+		session.remove("cartDTOList");
+		session.remove("totalPriceAll");
 		
 		
 

@@ -38,7 +38,7 @@
 	<s:elseif test="#session.inquiryDTOList != null"><br>
 	<p>問い合わせ内容</p>
 	
-	<table class="inquiry-table">
+	<table border="1px">
 		<tbody>
 			<tr>
 	 			<th>名前</th>
@@ -49,17 +49,16 @@
 			
 			<s:iterator value="#session.inquiryDTOList">
 	 <tr>
-			<td><span>名前:</span></td>
+			
 				<td><s:property value="name"/></td>
-			</tr>
+			
 
-			<tr>
-				<td><span>メールアドレス:</span></td>
+
 				<td><s:property value="mail"/></td>
-			</tr>
+		
 
-			<tr>
-				<td><span>問い合わせの種類:</span></td>
+		
+				
 				<td><s:if test='qtype=="company"'>
 				会社について
 				</s:if>
@@ -71,9 +70,8 @@
 				<s:if test='qtype=="support"'>
 				アフターサポートについて
 				</s:if></td>
-			</tr>
-			<tr>
-				<td><span>問い合わせ内容:</span></td>
+		
+				
 				<td><s:property value="body"/></td>
 			</tr>
 	     </s:iterator>

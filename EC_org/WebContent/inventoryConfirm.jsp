@@ -41,7 +41,7 @@
 					<s:property value="itemName" /><br>
 
 					現在庫数：
-					<s:property value="item_stock"/><span>個</span><br>
+					<s:property value="itemStock"/><span>個</span><br>
 
 					追加個数:
 					<s:property value="count"/><span>個</span></li><br><br>

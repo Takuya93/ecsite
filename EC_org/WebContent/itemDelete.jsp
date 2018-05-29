@@ -36,7 +36,7 @@
 				<s:property value="itemPrice" /><span>円</span><br>
 
 				<span>現在の在庫:</span>
-				<s:property value="item_stock"/><span>個</span><br>
+				<s:property value="itemStock"/><span>個</span><br>
 
 				<input class="check-box" type="checkbox" name="deleteName" value="<s:property value='itemName'/>"></li>
 			

@@ -44,7 +44,9 @@
 	<li><textarea name="body" cols="30" rows="5"></textarea></li>
 	</ul>
 	
-	<div id="text-center"><s:submit class="buttonInquiry" value="送信"/></div>
+	<div id="text-center">
+	<input type="hidden" name="master_id" value="kanri"/>
+	<s:submit class="buttonInquiry" value="送信"/></div>
 	</s:form>
 	
 	</div>

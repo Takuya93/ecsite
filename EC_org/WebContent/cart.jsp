@@ -39,9 +39,13 @@
 			<span>合計金額:</span><s:property value="session.totalPriceAll"/>
 			
 			<div style="text-center">
-				<span style="display:inline;float:left;"><input type="hidden" name="deleteFlg" value="1">
-				<s:submit class="button" name="deleteFlg" value="削除"/></span>
-				<span style="display:inline;float:left;"><s:submit class="button" value="購入"/></span>
+				<span style="display:inline;float:left;">
+					<input type="hidden" name="deleteFlg" value="1">
+					<s:submit class="button" name="deleteFlg" value="削除"/>
+				</span>
+				<span style="display:inline;float:left;">
+					<s:submit class="button" value="購入"/>
+				</span>
 			</div>
 			</div>
 		</s:form>

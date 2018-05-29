@@ -43,7 +43,7 @@
 				<span>値段:</span>
 				<s:property value="itemPrice" /><span>円</span><br>
 				<span>在庫:</span>
-				<s:property value="item_stock"/><span>個</span><br>
+				<s:property value="itemStock"/><span>個</span><br>
 
 				<span>変更する数:</span>
 

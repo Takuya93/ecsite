@@ -56,6 +56,7 @@
 <!-- BuyItemCompleteAction -->
 <action name="BuyItemCompleteAction" class="com.internousdev.ec.action.BuyItemCompleteAction" method="execute">
 <result name="success">buyItemComplete.jsp</result>
+<result name="error">buyItemError.jsp</result>
 </action>
 
 <!-- UserCreateAction -->

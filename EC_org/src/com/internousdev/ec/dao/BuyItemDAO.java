@@ -17,7 +17,7 @@ public class BuyItemDAO {
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
 
-		String sql="SELECT id, item_image, item_name, item_price FROM item_info_transaction";
+		String sql="SELECT id, item_image, item_name, item_price,item_stock FROM item_info_transaction";
 
 		try{
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -29,6 +29,7 @@ public class BuyItemDAO {
 				buyItemDTO.setItemImage(resultSet.getString("item_image"));
 				buyItemDTO.setItemName(resultSet.getString("item_name"));
 				buyItemDTO.setItemPrice(resultSet.getString("item_price"));
+				buyItemDTO.setItemStock(resultSet.getInt("item_stock"));
 
 				buyItemDTOList.add(buyItemDTO);
 			}
@@ -43,7 +44,7 @@ public class BuyItemDAO {
 		Connection connection = dbConnector.getConnection();
 		BuyItemDTO buyItemDTO = new BuyItemDTO();
 
-		String sql = "SELECT id, item_image, item_name, item_price FROM item_info_transaction WHERE id=?";
+		String sql = "SELECT id, item_image, item_name, item_price, item_stock FROM item_info_transaction WHERE id=?";
 
 		try{
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -56,6 +57,7 @@ public class BuyItemDAO {
 				buyItemDTO.setItemImage(resultSet.getString("item_image"));
 				buyItemDTO.setItemName(resultSet.getString("item_name"));
 				buyItemDTO.setItemPrice(resultSet.getString("item_price"));
+				buyItemDTO.setItemStock(resultSet.getInt("item_stock"));
 			}
 		}catch(Exception e){
 			e.printStackTrace();
@@ -83,6 +85,7 @@ public class BuyItemDAO {
 				buyItemDTO.setId(resultSet.getInt("id"));
 				buyItemDTO.setItemName(resultSet.getString("item_name"));
 				buyItemDTO.setItemPrice(resultSet.getString("item_price"));
+				buyItemDTO.setItemStock(resultSet.getInt("item_stock"));
 
 				buyItemDTOList.add(buyItemDTO);
 			}

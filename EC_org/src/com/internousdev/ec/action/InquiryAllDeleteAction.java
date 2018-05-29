@@ -45,10 +45,10 @@ public class InquiryAllDeleteAction extends ActionSupport implements SessionAwar
 	}
 	
 	public void delete() throws SQLException{
-		String masterId = session.get("master_id").toString();
+		String master_id = session.get("master_id").toString();
 		InquiryCompleteDAO dao = new InquiryCompleteDAO();
 		
-		int res = dao.inquiryAllDelete(masterId);
+		int res = dao.inquiryAllDelete(master_id);
 		
 		if(res > 0) {
 			setMessage("問合わせ履歴を削除しました。");

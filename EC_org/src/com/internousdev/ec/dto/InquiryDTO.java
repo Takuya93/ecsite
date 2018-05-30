@@ -1,12 +1,20 @@
 package com.internousdev.ec.dto;
 
 public class InquiryDTO {
+	private int id;
 	private String name;
 	private String mail;
 	private String qtype;
 	private String body;
 	private String master_id;
 
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getName(){
 		return name;
 	}

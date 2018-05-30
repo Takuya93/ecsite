@@ -11,7 +11,7 @@ public class UserDeleteDAO {
 	private Connection connection = dbConnector.getConnection();
 	public int userDeleteInfo(String deleteId) throws SQLException{
 		
-		String sql = "DELETE FROM login_user_transaction WHERE user_id=?";
+		String sql = "DELETE FROM login_user_transaction WHERE login_id=?";
 		
 		int result = 0;
 		

@@ -15,17 +15,25 @@ public class SearchItemAction extends ActionSupport implements SessionAware{
 	public List<BuyItemDTO> buyItemDTOList;
 
 	public String execute(){
-		String result = ERROR;
+		String result;
 
+		
 		session.remove("searchItem");
 		session.remove("buyItemList");
-
+		
+		
 		BuyItemDAO buyItemDAO = new BuyItemDAO();
 		buyItemDTOList = buyItemDAO.getSelectBuyItemName(searchName);
+		if(buyItemDTOList.isEmpty()) {
+			return ERROR;
+		}
 
 		System.out.println(buyItemDTOList.get(0).getItemName());
+		
 
 		session.put("buyItemList",buyItemDTOList);
+		
+		
 		
 		result = SUCCESS;
 

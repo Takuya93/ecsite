@@ -70,24 +70,20 @@ public class InquiryCompleteDAO {
 		return ret;
 	}
 	
-	public int inquiryAllDelete(String master_id) throws SQLException{
+	public List<InquiryDTO> inquiryAllDelete(String name) throws SQLException{
 
-		String sql = "DELETE FROM inquiry WHERE master_id=?";
-
+		String sql = "DELETE FROM inquiry WHERE name = ?";
 		DBConnector dbConnector = new DBConnector();
-
 		Connection connection = dbConnector.getConnection();
+		List<InquiryDTO> inquiryList = new ArrayList<>();
 
-		PreparedStatement preparedStatement;
 
-
-		int result = 0;
 
 		try{
-			preparedStatement = connection.prepareStatement(sql);
-			preparedStatement.setString(1,master_id);
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1,name);
 
-			result = preparedStatement.executeUpdate();
+			preparedStatement.executeUpdate();
 
 		}catch(SQLException e){
 			e.printStackTrace();
@@ -96,7 +92,7 @@ public class InquiryCompleteDAO {
 			connection.close();
 		}
 
-		return result;
+		return inquiryList;
 
 		}
 

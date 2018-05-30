@@ -40,11 +40,10 @@
 			
 			<div style="text-center">
 				<span style="display:inline;float:left;">
-					<input type="hidden" name="deleteFlg" value="1">
-					<s:submit class="button" name="deleteFlg" value="削除"/>
+					<button type="submit" class="button" name="delete" value="delete" onclick="return confirm('削除しますか')">削除</button>
 				</span>
 				<span style="display:inline;float:left;">
-					<s:submit class="button" value="購入"/>
+					<button type="submit"  class="button" name="purchase" value="purchase">購入</button>
 				</span>
 			</div>
 			</div>

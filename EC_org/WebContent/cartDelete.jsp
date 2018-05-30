@@ -6,12 +6,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="Content-Style-Type" content="text/css"/>
-<meta http-equiv="Content=Script-Type" content="text/javascript"/>
+<meta http-equiv="Content-Script-Type" content="text/css"/>
 <meta http-equiv="imagetoolbar" content="no"/>
 <meta http-equiv="refresh" content="2;URL=GoHomeAction"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
-<title>buyItemError</title>
+<title>CartDelete</title>
 <link rel="stylesheet" type="text/css" href="./style/home.css">
 </head>
 <body>
@@ -23,7 +23,8 @@
 </div>
 <div id="main">
 	<div id="top"></div>
-	<p>カートにアイテムが入っていません！</p>
+	<p>カート情報を削除しました。</p>
+
 </div>
 <div id="top"></div>
 <div id="footer">
@@ -31,6 +32,8 @@
 		<s:include value="footer.jsp"/>
 	</div>
 </div>
+
+
 
 
 

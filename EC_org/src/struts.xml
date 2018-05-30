@@ -57,6 +57,7 @@
 <action name="BuyItemCompleteAction" class="com.internousdev.ec.action.BuyItemCompleteAction" method="execute">
 <result name="success">buyItemComplete.jsp</result>
 <result name="error">buyItemError.jsp</result>
+<result name="delete">cartDelete.jsp</result>
 </action>
 
 <!-- UserCreateAction -->
@@ -124,7 +125,7 @@
 <!-- SearchItemAction -->
 <action name="SearchItemAction" class="com.internousdev.ec.action.SearchItemAction" method="execute">
 <result name="success">buyItem.jsp</result>
-<result name="error">home.jsp</result>
+<result name="error">searchError.jsp</result>
 </action>
 
 
@@ -177,6 +178,7 @@
 <!-- InquiryAllDeleteAction -->
 <action name="InquiryAllDeleteAction" class="com.internousdev.ec.action.InquiryAllDeleteAction" method="execute">
 <result name="success">inquiryDelete.jsp</result>
+<result name="error">master.jsp</result>
 </action>
 
 	</package>

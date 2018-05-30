@@ -22,7 +22,7 @@ public class InquiryAllDeleteAction extends ActionSupport implements SessionAwar
 	@SuppressWarnings("unchecked")
 	public String execute() throws SQLException{
 		
-		String result;
+		String result = ERROR;
 		
 		InquiryCompleteDAO inquiryCompleteDAO = new InquiryCompleteDAO();
 		List<InquiryDTO> inquiryDTOList = (List<InquiryDTO>) session.get("InquiryDTOList");
@@ -34,27 +34,26 @@ public class InquiryAllDeleteAction extends ActionSupport implements SessionAwar
 					session.put("inquiryDTOList",inquiryDTOList);
 				}
 			}
+			return SUCCESS;
 		
-		}else{
+		}else if(deleteFlg.equals("1")){
 			delete();
-			inquiryDTOList = null;
+			return SUCCESS;
 		}
 
-		result = SUCCESS;
 		return result;
 	}
 	
 	public void delete() throws SQLException{
-		String master_id = session.get("master_id").toString();
+		String master_id = session.get("Name").toString();
 		InquiryCompleteDAO dao = new InquiryCompleteDAO();
 		
-		int res = dao.inquiryAllDelete(master_id);
+		List<InquiryDTO> res = dao.inquiryAllDelete(master_id);
 		
-		if(res > 0) {
+		if(res.isEmpty()) {
 			setMessage("問合わせ履歴を削除しました。");
-			inquiryDTOList = null;
-			session.put("inquiryDTOList", inquiryDTOList);
-		}else if(res == 0) {
+			session.remove("inquiryDTOList");
+		}else{
 			setMessage("問合わせ履歴の削除に失敗しました。");
 		}
 	}
